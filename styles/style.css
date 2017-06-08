@@ -1,0 +1,1668 @@
+@font-face {
+    font-family: 'Supermolot';
+    src: url("../fonts/Supermolot.otf");
+}
+@font-face {
+    font-family: 'SupermolotBold';
+    src: url("../fonts/Supermolot Bold.otf");
+}
+@font-face {
+    font-family: 'SupermolotLight';
+    src: url("../fonts/Supermolot Light.otf");
+}
+@font-face {
+    font-family: 'SupermolotBoldItalic';
+    src: url("../fonts/Supermolot Bold Italic.otf");
+}
+@font-face {
+    font-family: 'SupermolotLightItalic';
+    src: url("../fonts/Supermolot Light Italic.otf");
+}
+@font-face {
+    font-family: 'SupermolotItalic';
+    src: url("../fonts/Supermolot Italic.otf");
+}
+@font-face {
+    font-family: 'ProximaBold';
+    src: url("../fonts/Proxima Nova Bold.otf");
+}
+@font-face {
+    font-family: 'ProximaLight';
+    src: url("../fonts/Proxima Nova Light.otf");
+}
+@font-face {
+    font-family: 'Proxima';
+    src: url("../fonts/Proxima Nova Regular.otf");
+}
+@font-face {
+    font-family: 'ProximaSemibold';
+    src: url("../fonts/Proxima Nova Semibold.otf");
+}
+@font-face {
+    font-family: 'ProximaThin';
+    src: url("../fonts/Proxima Nova Thin.otf");
+}
+
+
+body {
+    background-color: #e4e0d6;
+    width: 1170px;
+    margin: 0 auto;
+}
+.bg {
+    background-image: url(../img/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 710px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1000;
+}
+.logo {
+    margin-top: 27px;
+    float: left;
+    display: inline-block;
+    background-color: #ed1651;
+    height: 120px;
+    width: 170px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+.logo1st {
+    font-family: 'Supermolot';
+    font-size: 33px;
+    line-height: 24px;
+    margin-top: 30px;
+}
+.logo2nd {
+    font-family: 'SupermolotBold';
+    font-size: 41px;
+    line-height: 35px;
+}
+.line-menu {
+    margin-top: 27px;
+    float: left;
+    display: inline-block;
+    width: 1000px;
+}
+.line1st {
+    height: 60px;
+    background-color: white;
+    display: inline-block;
+    float: left;
+    width: 1000px;
+    position: absolute;
+}
+.cat-menu {
+    align-items: center;
+    flex-direction: row;
+    float: left;
+    display: flex;
+    height: 60px;
+}
+.cat-menu a {
+    font-family: 'Supermolot';
+    font-size: 14px;
+    color: black;
+    width: 130px;
+    display: flex;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.4s all;
+    margin: auto 0 auto 0;
+    height: 60px;
+}
+.cat-menu a:hover {
+    background-color: #021563;
+    color: white;
+}
+.auth-menu {
+    display: inline-block;
+    float: right;
+    line-height: 60px;
+    height: 60px;
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+}
+.auth {
+    padding: 0 10px;
+    display: inline-block;
+}
+/*.auth a {
+    text-align: center;
+    border-bottom: 1px dashed #ed1651;
+    text-decoration: none;
+    color: #ed1651;
+}*/
+.auth-link {
+    text-align: center;
+    border-bottom: 1px dashed #ed1651;
+    text-decoration: none;
+    color: #ed1651;
+}
+.auth-link:hover {
+    border: none;
+}
+/*.auth a:hover {
+    border: none;
+}*/
+.line-lk {
+    padding: 0 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    float: center;
+}
+.line-lk a {
+    text-align: center;
+    border-bottom: 1px solid #ed1651;
+    text-decoration: none;
+    color: #ed1651;
+}
+.line-lk a:hover {
+    border: none;
+}
+.reg {
+    padding: 0 10px;
+    display: inline-block;
+}
+.reg a {
+    text-align: center;
+    border-bottom: 1px dashed #333333;
+    text-decoration: none;
+    color: #333333;
+}
+.reg a:hover {
+    border-bottom: none;
+}
+
+.cart {
+    width: 188px;
+    color: white;
+    float: right;
+    height: 60px;
+    display: inline-block;
+    background: #021563;
+    margin-top: 60px;
+}
+.cart-text {
+    display: inline-block;
+    padding-left: 18px;
+    padding-top: 15px;
+}
+.cart img {
+    display: inline-block;
+    line-height: 60px;
+}
+.sum {
+    font-family: 'SupermolotBold';
+    font-size: 20px;
+}
+.rub {
+    font-family: 'Supermolot';
+    font-size: 14px;
+}
+.number-items {
+    font-family: 'Supermolot';
+    font-size: 12px;
+    color: #999999;
+}
+
+.cover {
+    height: 400px;
+    padding-top: 230px;
+}
+.name-1st {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 72px;
+    color: black;
+    text-transform: uppercase;
+    line-height: 62px;
+}
+.name-2nd {
+    font-family: 'SupermolotLightItalic';
+    font-size: 72px;
+    color: black;
+    text-transform: uppercase;
+    line-height: 62px;
+}
+.name-opis {
+    font-family: 'Supermolot';
+    font-size: 16px;
+    color: white;
+    line-height: 24px;
+}
+.btn-see {
+    position: relative;
+    display: block;
+    top: 33px;
+    left: 270px;
+    font-family: 'SupermolotItalic';
+    font-size: 18px;
+    color: white;
+    height: 53px;
+    width: 243px;
+    line-height: 53px;
+    text-align: center;
+    border: 3px solid #ed1651;
+    z-index: 1;
+    text-decoration: none;
+}
+.cover a {
+    text-decoration: none;
+}
+.btn-see:hover {
+    background-color: #ed1651;
+    color: white;
+}
+.cover-text {
+    position: absolute;
+    top: 10px;
+    left: -200px;
+    font-family: 'SupermolotBoldItalic';
+    font-size: 340px;
+    line-height: 430px;
+    color: rgba(51, 51, 51, 0.2);
+    white-space: nowrap;
+}
+
+.footer {
+    height: 60px;
+    background: #021563;
+    width: 1170px;
+    font-family: 'SupermolotLight';
+    line-height: 60px;
+    margin: 30px 0 62px 0;
+}
+.author {
+    padding-left: 20px;
+    font-size: 11px;
+    line-height: 1.25;
+    color: #999999;
+    display: inline-block;
+    vertical-align: middle;
+}
+.up {
+    display: inline-block;
+    line-height: 60px;
+    font-size: 16px;
+    color: white;
+    float: right;
+    padding-right: 27px;
+    cursor: pointer;
+}
+
+.header-page {
+    font-family: 'SupermolotLightItalic';
+    font-size: 72px;
+    text-transform: uppercase;
+    padding-top: 200px;
+}
+.login-page {
+    margin: 30px auto;
+    width: 1170px;
+    height: 400px;
+    background-color: white;
+}
+.login-page div {
+    display: inline-block;
+
+
+}
+.login-page p {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #999999;
+    line-height: 16px;
+    padding: 5px;
+}
+.content-auth {
+    border-right: 1px solid #e9e9e9;
+    width: 600px;
+    height: 400px;
+    padding-left: 30px;
+    
+}
+.header-content-auth {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 24px;
+    padding-top: 30px;
+    
+}
+.header-content-auth-reg {
+    position: absolute;
+        font-family: 'SupermolotBoldItalic';
+    font-size: 24px;
+    padding: 30px;
+    
+}
+.login-page input {
+    width: 524px;
+    background-color: #e9e9e9;
+    height: 47px;
+    line-height: 47px;
+    border: none;
+    padding-left: 18px;
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+}
+.btn-reg {
+    width: 220px;
+    height: 48px;
+    background-color: #ed1651;
+    margin-top: 23px;
+    font-family: 'SupermolotLight';
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    border: none;
+}
+.content-auth button {
+    margin-top: 30px;
+    height: 37px;
+    width: 84px;
+    font-family: 'SupermolotLight';
+    font-size: 18px;
+    line-height: 18px;
+    color: #333333;
+    border: 5px solid #ed1651;
+    background-color: white;
+}
+.zabil-pass {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #ed1651;
+    margin-left: 35px;
+}
+.zabil-pass a {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #ed1651;
+}
+
+.registration-page {
+    width: 1140px;
+    height: 400px;
+    background-color: white;
+    display: block;
+    padding-left: 30px;
+    margin: 30px auto;
+}
+.registration-page div {
+    display: inline-block;
+    width: 568px;
+}
+.registration-page input {
+    width: 520px;
+    background-color: #e9e9e9;
+    height: 47px;
+    line-height: 47px;
+    border: none;
+    padding-left: 18px;
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+}
+.registration-page p {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #999999;
+    line-height: 16px;
+}
+
+.about-shop {
+    background-image: url("../img/aboutshop.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 25px auto;
+    height: 311px;
+    width: 1170px;
+    z-index: -1000;
+}
+.about-shop .header {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 24px;
+    position: relative;
+    left: 500px;
+    top: 45px;
+    width: 200px;
+}
+.about-shop .text {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    position: relative;
+    top: 60px;
+    left: 500px;
+    width: 530px;
+    height: 200px;
+    overflow-x:hidden;
+}
+
+.cat-head-num-page .text {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #333333;
+    line-height: 80px;
+    padding-right: 20px;
+}
+
+.header-list-items {
+    font-family: 'Supermolot';
+    font-size: 24px;
+    line-height: 80px;
+    color: #021562;
+    background-color: white;
+    
+    width: 1170px;
+}
+.header-list-items .text {
+    display: inline-block;
+    padding-left: 12px;
+}
+.header-list-items .arrow-slide {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+}
+
+.slides-items {
+    display: flex;
+    width: 1170px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.slide-item {
+    width: 290px;
+    background-color: white;
+    height: 326px;
+    display: inline-block;
+    overflow-x:hidden;
+    overflow:  hidden;
+}
+.slide-item-name {
+    font-family: 'Supermolot';
+    font-size: 14px;
+    color: #555555;
+    padding-left: 15px;
+    display: inline-block;
+    width: 150px;
+    margin: auto;
+    transition: 0.4s all;
+    overflow-x:hidden;
+}
+.image-good-item-block {
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    display: block;
+    transition: all 1s ease-out;
+}
+.slide-item-price {
+    font-family: 'SupermolotLightItalic';
+    font-size: 18px;
+    color: #ed1651;
+    margin: auto;
+    display: inline-block;
+    float: right;
+    padding-right: 15px;
+    transition: 0.4s all;
+}
+
+
+.sliders {
+    margin: 10px auto;
+    height: 311px;
+}
+.sliders div {
+    display: inline-block;
+    float: left;
+}
+.sliders div .head {
+    position: absolute;
+    margin-top: -90px;
+    margin-left: 22px;
+    font-family: 'SupermolotBoldItalic';
+    font-size: 32px;
+    text-transform: uppercase;
+}
+.sliders div .body {
+    position: absolute;
+    margin-top: -50px;
+    margin-left: 22px;
+    font-family: 'SupermolotLightItalic';
+    font-size: 32px;
+    text-transform: uppercase;
+}
+.sliders-3 {
+    color: white;
+}
+.sliders-1, .sliders-2 {
+    color: black;
+}
+
+.cart-page {
+    margin: 30px auto;
+    width: 1170px;
+    background-color: white;
+}
+.cart-table {
+    width: 100%;
+    font-family: 'SupermolotLight';
+}
+.cart-table-head {
+    ьфкfont-size: 14px;
+    color: #999999;
+    line-height: 80px;
+    height: 80px;
+    border-bottom: 2px solid #f6f6f6;
+}
+.cart-table-head .head1 {
+    float: left;
+    line-height: 80px;
+    width: 410px;
+    padding-left: 30px;
+}
+
+.cart-table-head .head2 {
+    float: left;
+    line-height: 80px;
+    width: 180px;
+    text-align: center;
+}
+
+.cart-table-head .head3 {
+    float: left;
+    line-height: 80px;
+    width: 130px;
+    text-align: center;
+}
+
+
+
+.cart-table-head .head4 {
+    float: left;
+    line-height: 80px;
+    width: 190px;
+    text-align: center;
+}
+
+.cart-table-head .head5 {
+    float: left;
+    line-height: 80px;
+    width: 230px;
+    text-align: center;
+}
+.cart-table .cart-line {
+    height: 138px;
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.cart-table .cart-item-img {
+    width: 170px;
+    height: 138px;
+    display: inline-block;
+    float: left;
+}
+.cart-table .col1 {
+    width: 440px;
+    text-align: left;
+    font-size: 18px;
+    padding: 0;
+    float: left;
+    line-height: 138px;
+    height: 138px;
+    display: flex;
+}
+.cart-line_confirm {
+    height: 50px;
+    display: flex;
+}
+
+.cart-table .col2 {
+    width: 180px;
+    text-align: center;
+    color: red;
+    font-size: 14px;
+    float: left;
+    line-height: 138px;
+}
+.cart-table .col3 {
+    width: 130px;
+    text-align: center;
+    font-size: 18px;
+    float: left;
+    line-height: 138px;
+}
+.cart-table .col4 {
+    width: 190px;
+    text-align: center;
+    float: left;
+    line-height: 138px;
+}
+.cart-table .col5 {
+    width: 230px;
+    text-align: center;
+    font-size: 18px;
+    font-family: 'SupermolotBoldItalic';
+    float: left;
+    line-height: 138px;
+}
+.cart-table .cart-item-name {
+    line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 30px;
+    margin: auto;
+}
+.cart-table .cart-count-minus {
+    height: 47px;
+    width: 40px;
+    background-color: #e9e9e9;
+    line-height: 47px;
+    text-align: center;
+    display: inline-block;
+    border: none;  
+    outline: none;
+    cursor: pointer;
+}
+.cart-table .cart-count-plus {
+    height: 47px;
+    width: 40px;
+    background-color: #e9e9e9;
+    line-height: 47px;
+    text-align: center;
+    display: inline-block;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.cart-table .cart-item-count {
+    height: 47px;
+    width: 56px;
+    background-color: #e9e9e9;
+    line-height: 47px;
+    text-align: center;
+    display: inline-block;
+    border-left: 2px solid #dadada;
+    border-right: 2px solid #dadada;
+}
+.cart-table .cart-del-item {
+    display: inline-block;
+    float: right;
+    padding-right: 30px;
+    margin-top: 58px;
+}
+.cart-table .cart-item-sum {
+    display: inline-block;
+    float: left;
+    padding-left: 30px;
+}
+.cart-page .back-to-shop {
+    width: 190px;
+    height: 45px;
+    background-color: black;
+    font-family: 'SupermolotLight';
+    color: white;
+    font-size: 14px;
+    display: inline-block;
+    float: left;
+    margin-left: 30px;
+    border: none;
+    margin-top: 50px;
+    display: inline-block;
+    text-decoration: none;
+    line-height: 45px;
+    text-align: center;
+}
+.cart-page .block-itogo {
+    display: inline-block;
+    float: right;
+    margin-right: 50px;
+}
+.cart-page .itogo {
+    display: inline-block;
+    float: left;
+    font-family: 'SupermolotBoldItalic';
+    font-size: 24px;
+    color: black;
+    line-height: 60px;
+}
+.cart-page .cart-itogo-sum {
+    display: inline-block;
+    float: right;
+    font-family: 'SupermolotBoldItalic';
+    font-size: 30px;
+    color: black;
+    line-height: 60px;
+}
+.cart-page .cart-zakaz {
+    width: 290px;
+    height: 50px;
+    background-color: #ed1651;
+    color: white;
+    font-family: 'SupermolotBold';
+    font-size: 20px;
+    border: none;
+    display: inline-block;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+}
+.cart-footer {
+    padding: 30px 0;
+    background-color: white;
+    height: 120px;
+}
+
+.zakaz-cur {
+    background-color: black;
+    height: 80px;
+    width: 100%;
+}
+.zakaz-cur span {
+    font-family: 'SupermolotBold';
+    font-size: 24px;
+    line-height: 80px;
+}
+.zakaz-head-num {
+    padding-left: 30px;
+    color: red;
+}
+.zakaz-cur .zakaz-head-text {
+    color: white;
+}
+.zakaz-nocur .zakaz-head-text {
+    color: black;
+}
+.zakaz-newuser {
+    background-color: white;
+    width: 470px;
+    float: left;
+    padding-left: 30px;
+}
+.zakaz-content-head {
+    font-family: 'SupermolotBold';
+    font-size: 18px;
+    color: #ed1651;
+    padding-top: 20px;
+    margin-bottom: 30px;
+}
+.zakaz-fastlogin {
+    background-color: white;
+    float: left;
+    width: 670px;
+}
+.zakaz-user-cont {
+    width: 100%;
+    background-color: white;
+    height: 420px;
+    border-bottom: 2px solid #f6f6f6;
+}
+.zakaz-content-headpole {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #999999;
+    line-height: 16px;
+    padding: 0;
+    margin: 20px 0 5px 0;
+}
+.zakaz-content-pole-full {
+    width: 370px;
+}
+.zakaz-content-pole-house {
+    width: 160px;
+}
+.zakaz-content-pole {
+    
+    background-color: #e9e9e9;
+    height: 47px;
+    line-height: 47px;
+    border: none;
+    padding-left: 20px;
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+}
+.zakaz.btn-cont {
+    
+}
+.zakaz.btn-login {
+    
+}
+.zakaz-btn {
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 48px;
+    background-color: #ed1651;
+    margin-top: 23px;
+    font-family: 'SupermolotLight';
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    border: none;
+}
+.ahref-pass {
+    color: black;
+    font-family: 'Supermolot';
+    font-size: 14px;
+    margin-left: 20px;
+}
+.zakaz-nocur {
+    background-color: white;
+    height: 80px;
+    width: 100%;
+    border-bottom: 2px solid #f6f6f6;
+}
+.zakaz-nocur span {
+    font-family: 'SupermolotBold';
+    font-size: 24px;
+    line-height: 80px;
+}
+.zakaz-delivery-cont {
+    width: 100%;
+    background-color: white;
+    height: 430px;
+    border-bottom: 2px solid #f6f6f6;
+}
+.zakaz-address {
+    float: left;
+    width: 430px;
+    padding-left: 30px;
+}
+.zakaz-delivery-var {
+    float: left;
+    width: 300px;
+    
+}
+.zakaz-comment {
+    float: left;
+    width: 410px;
+}
+.zakaz-content-textarea {
+    width: 330px;
+    background-color: #e9e9e9;
+    height: 210px;
+    border: none;
+    padding: 20px;
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+    resize: none;
+}
+.zakaz2-cont {
+    float: left;
+}
+.var-delivery {
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+    margin: 30px 0;
+    width: 230px;
+    padding-left: 30px;
+}
+.var-delivery input{
+    display: inline-block;
+    float: left;
+}
+.var-delivery span {
+    float: left;
+    margin-left: 30px;
+}
+.zakaz-delivery-var label {
+    font-family: 'SupermolotLight';
+    font-size: 16px;
+    color: black;
+    margin: 30px 0;
+}
+.zakaz-delivery-var input {
+    
+}
+.zakaz-delivery-var .radio, .zakaz-delivery-var label {
+    cursor: pointer;
+}
+.zakaz-delivery-var .radio:not(checked) {
+    position: absolute;
+    opacity: 0;
+}
+.zakaz-delivery-var .radio:not(checked) + label {
+  position: relative;
+  padding: 0;
+}
+.zakaz-delivery-var .radio:not(checked) + label:before {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: -26px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #e9e9e9;
+}
+.zakaz-delivery-var .radio:not(checked) + label:after {
+  content: '';
+  position: absolute;
+  top: 1px;
+  left: -26px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: white;
+  border: 3px solid #1ac7bf;
+  opacity: 0;
+}
+.zakaz-delivery-var .radio:checked + label:after {
+  opacity: 1;
+}
+.zakaz-delivery-var .radio:checked + label:before {
+  background: white;
+}
+.zakaz-sostav {
+    background-color: white;
+    padding-left: 30px;
+}
+.zakaz-sostav-table-head {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #999999;
+    line-height: 30px;
+    height: 30px;
+    border-bottom: 2px solid #f6f6f6;
+}
+.zakaz-sostav-table-head .head1 {
+    float: left;
+    line-height: 30px;
+    width: 550px;
+    
+}
+.zakaz-sostav-table-head .head2 {
+    float: left;
+    line-height: 30px;
+    width: 160px;
+    text-align: center;
+}
+.zakaz-sostav-table-head .head3 {
+    float: left;
+    line-height: 30px;
+    width: 180px;
+    text-align: center;
+}
+.zakaz-sostav-table-head .head4 {
+    float: left;
+    line-height: 30px;
+    width: 220px;
+    text-align: center;
+}
+.zakaz-sostav-table .cart-line {
+    height: 50px;
+}
+.zakaz-sostav .col1 {
+    width: 550px;
+    text-align: left;
+    font-size: 18px;
+    padding: 0;
+    float: left;
+    line-height: 50px;
+    font-family: 'SupermolotLight';
+    color: #555555;
+    margin: auto;
+}
+.zakaz-sostav .col2 {
+    width: 160px;
+    text-align: center;
+    font-size: 18px;
+    float: left;
+    line-height: 50px;
+    font-family: 'SupermolotLightItalic';
+    color: #5d5d5d;
+}
+.zakaz-sostav .col3 {
+    width: 180px;
+    text-align: center;
+    font-size: 18px;
+    float: left;
+    line-height: 50px;
+    font-family: 'SupermolotLightItalic';
+    color: #5d5d5d;
+}
+.zakaz-sostav .col4 {
+    width: 220px;
+    text-align: center;
+    font-size: 18px;
+    float: right;
+    line-height: 50px;
+    font-family: 'SupermolotBoldItalic';
+}
+.zakaz-sostav-itogo {
+    height: 80px;
+    padding-right: 30px;
+    font-family: 'SupermolotBoldItalic';
+    float: right;
+    width: 1170px;
+}
+.zakaz-sostav-itogo .text {
+    font-size: 24px;
+    padding-right: 20px;
+    line-height: 80px;
+    padding-left: 850px;
+}
+.zakaz-sostav-itogo .itogo {
+    font-size: 30px;
+    padding-right: 30px;
+    line-height: 80px;
+    float: right;
+}
+.zakaz-confirm-all {
+    font-family: 'SupermolotLight';
+    float: left;
+    /*height: 200px;*/
+    padding-left: 30px;
+    width: 1140px;
+}
+.zakaz-all-itog {
+    float: left;
+}
+.zakaz-confirm-cont {
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #f6f6f6;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
+.zakaz-confirm-value {
+    padding-top: 5px;
+    padding-bottom: 30px;
+}
+.btn-confirm {
+    width: 220px;
+    height: 48px;
+    background-color: #ed1651;
+    margin-top: 23px;
+    font-family: 'SupermolotLight';
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    line-height: 48px;
+    border: none;
+    text-decoration: none;
+    display: inline-block;
+}
+.confirm-order {
+    cursor: pointer;
+}
+.zakaz-done-cont {
+    width: 100%;
+    background-color: white;
+    border-bottom: 2px solid #f6f6f6;
+    margin-bottom: 30px;
+    padding: 30px;
+}
+.zakaz-done-head {
+    font-family: 'SupermolotBold';
+    font-size: 24px;
+    width: 1140px;
+    height: 50px;
+}
+.zakaz-number {
+    color: black;
+    float: left;
+}
+.zakaz-oform {
+    color: #ed1651;
+    float: left;
+    padding-left: 5px;
+}
+.zakaz-done-text {
+    font-family: 'SupermolotLight';
+    font-size: 18px;
+    width: 440px;
+}
+
+.lk-userdata {
+    width: 558px;
+    float: left;
+    background-color: white;
+    border-right: 2px solid #f6f6f6;
+}
+.lk-page {
+    background-color: white;
+    padding: 30px;
+    width: 1110px;
+    height: 960px;
+    margin-bottom: 30px;
+}
+.lk-pole-full {
+    width: 500px;
+}
+.lk-pole-mini {
+    width: 225px;
+}
+.lk-head {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 24px;
+    color: black;
+    margin: 20px 0 10px 0; 
+}
+.lk-orders {
+    float: left;
+    padding: 30px 0 30px 30px;
+    width: 520px;
+    background-color: white;
+}
+.lk-orders-item {
+    height: 80px;
+    font-family: 'SupermolotLight';
+}
+.lk-order-info {
+    float: left;
+    width: 170px;
+}
+.lk-order-id {
+    text-align: left;
+    color: black;
+    font-size: 24px;
+}
+.lk-order-sum {
+    text-align: left;
+    font-size: 17px;
+    color: black;
+}
+.lk-order-time {
+    text-align: left;
+    font-size: 12px;
+    color: #999999;
+}
+.lk-order-delivery {
+    text-align: right;
+    float: right;
+    line-height: 80px;
+    font-size: 36px;
+    color: #ed1651;
+}
+.lk-menu {
+    position: absolute;
+    top: -99999px;
+    width: 200px;
+    background-color: white;
+    transition: 0.5s opacity;
+    opacity: 0;
+}
+.line-lk:hover .lk-menu {
+    top: 60px;
+    right: 0;
+    opacity: 1;
+}
+.lk-menu-list {
+    display: block;
+    font-family: 'SupermolotLight';
+    color: black;
+    text-align: center;
+    line-height: 30px;
+    height: 30px;
+}
+.lk-menu-list a {
+    text-decoration: none;
+    border-bottom: 1px dashed black;
+    color: black;
+}
+.lk-menu-list a:hover {
+    border-bottom: none;
+    color: #ed1651;
+}
+
+.cat-num-goods {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #999999;
+    text-transform: uppercase;
+    margin: 10px 0 20px 0;
+}
+.cat-but-page {
+    display: inline-block;
+    text-decoration: none;
+    margin: 0 5px 0 5px;
+    width: 30px;
+    height: 30px;
+    font-family: 'Supermolot';
+    font-size: 14px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+}
+.page-activ {
+    background-color: #ed1651;
+    color: white;
+}
+.page-noactiv {
+    background-color: #e9e9e9;
+    color: black;
+}
+.cat-head-num-page {
+    height: 80px;
+    text-align: right;
+    width: 100%;
+    background-color: white;
+}
+.cat-buts-page {
+    float: right;
+    line-height: 80px;
+    padding-top: 25px;
+    padding-right: 30px;
+}
+.cat-desc-head {
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 60px;
+    font-family: 'SupermolotItalic';
+    font-size: 38px;
+    color: black;
+    text-transform: uppercase;
+}
+.cat-desc-text {
+    position: absolute;
+    margin-top: 130px;
+    margin-left: 60px;
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: black;
+    width: 400px;
+}
+.slides-items-mini {
+     display: flex;
+    width: 585px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    float: left;
+}
+.cat-img-promo {
+    float: left;
+    display: inline-block;
+}
+.cat-items-mini {
+    float: left;
+    width: 584px;
+}
+.cat-goods {
+    min-height: 200px;
+}
+.cat-desc-img {
+    display: inline-block;
+    float: left;
+}
+.cat-desc {
+    float: left;
+    margin-right: 3px;
+}
+.cat-promo {
+    float: left;
+    display: inline-block;
+}
+.cat-promo-head {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 36px;
+    color: black;
+    line-height: 36px;
+    width: 320px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 60px;
+    text-transform: uppercase;
+}
+.cat-promo-desc {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #555555;
+    line-height: 14px;
+    width: 320px;
+    position: absolute;
+    margin-top: 140px;
+    margin-left: 60px;
+}
+.cat-promo-price {
+    font-family: 'SupermolotBoldItalic';
+    font-size: 36px;
+    color: #ed1651;
+    line-height: 36px;
+    width: 320px;
+    position: absolute;
+    margin-top: 240px;
+    margin-left: 60px;
+    text-transform: uppercase;
+}
+.cat-promo-see {
+    display: block;
+    position: absolute;
+    margin-top: 285px;
+    margin-left: 60px;
+    text-decoration: none;
+    border: 3px solid #ed1651;
+    width: 170px;
+    height: 50px;
+    line-height: 50px;
+    font-family: 'SupermolotItalic';
+    font-size: 18px;
+    color: black;
+    text-align: center;
+}
+.cat-promo-see:hover {
+    background-color: #ed1651;
+    color: white;
+}
+
+.product-back-to-shop {
+    color: #ed1651;
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    margin: 15px 0 15px; 0;
+}
+
+.product-images {
+    float: left;
+    width: 470px;
+    height: 500px;
+}
+
+.product-info {
+    width: 390px;
+    float: left;
+    height: 480px;
+    padding: 30px 20px 20px 20px;
+}
+
+.product-name {
+    font-family: 'SupermolotLightItalic';
+    font-size: 36px;
+    border-bottom: 3px solid #ed1651;
+    line-height: 45px;
+    margin-bottom: 20px;
+}
+
+.product-span3 {
+    float: left;
+    width: 240px;
+    height: 500px;
+    padding: 30px 15px 0 15px;
+}
+
+.product-page {
+    width: 100%;
+    height: 585px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.product-desc {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #555555;
+}
+
+.product-var {
+    margin-top: 40px;
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    color: #555555;
+}
+
+.product-var select {
+    background-color: #e9e9e9;
+    height: 30px;
+    width: 230px;
+    color: black;
+    border: none;
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+
+
+
+.prod-icons {
+    display: inline-block;
+    float: left;
+}
+
+.product-price-div {
+    min-height: 80px;
+    width: 220px;
+    border: 1px solid #dbdbdb;
+}
+
+.product-old-price {
+    font-family: 'SupermolotLightItalic';
+    font-size: 16px;
+    color: #999999;
+    text-align: center;
+    margin-top: 15px;
+    text-decoration: line-through;
+}
+
+.price_wo_disc {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.product-price {
+    font-family: 'SupermolotBold';
+    font-size: 26px;
+    color: #ed1651;
+    text-align: center;
+    margin: 15px 0 15px 0;
+}
+
+.product-availability {
+    font-family: 'SupermolotLight';
+    font-size: 11px;
+    color: black;
+    text-align: center;
+    margin: 15px 0 15px 0;
+}
+
+.prodict-buy-div {
+    height: 70px;
+    width: 220px;
+    border: 1px solid #dbdbdb;
+    margin-bottom: 20px;
+}
+
+.btn-buy {
+    background-color: #ed1651;
+    width: 130px;
+    height: 40px;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'SupermolotBold';
+    font-size: 16px;
+    line-height: 40px;
+    border: none;
+    margin: 17px 0 0 45px;
+}
+
+.btn-buy  img {
+    width: 16px;
+    height: 16px;
+}
+
+
+
+.prod-icon-text {
+    float: left;
+    color: #999999;
+    margin-left: 10px;
+    height: 45px;
+}
+
+.prod-icon-text1 {
+    font-family: 'SupermolotBold';
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.prod-icon-text2 {
+    font-family: 'SupermolotLight';
+    font-size: 14px;
+}
+
+.prod-dop-info {
+    height: 45px;
+    margin: 20px 0 20px 0;
+}
+
+.prod-images-mini {
+    height: 110px;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.prod-img-mini {
+    margin: 0 7px 0 7px;
+}
+
+.arrow-img-prod {
+    margin-bottom: 15px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+.error-pole {
+    font-family: 'SupermolotLight';
+    color: red;
+    padding: 0;
+    display: block;
+    font-size: 14px;
+    
+}
+.good-item-block-slide:hover{
+    /*transform: scale(1.05);
+    border: 2px solid #ed1651;*/
+    /*border-color: #ed1651;*/
+}
+.slide-item-text {
+    transition: 0.4s all;
+    width: 290px;
+    display: flex; height: 90px;
+}
+.good-item-block-slide:hover .slide-item-text{
+    background-color: #ed1651;
+}
+.good-item-block-slide:hover .slide-item-name {
+    color: white;
+    /*font-size: 18px;*/
+}
+.good-item-block-slide:hover .slide-item-price {
+    color: white;
+}
+.good-item-block-slide:hover .image-good-item-block {
+    transform: scale(1.1);
+    
+}
+
+.good-item-block-slide:hover .slide-item-img {
+    border-color: #ed1651;
+}
+
+.good-item-block-slide {
+    transition: 0.3s all;
+    position: relative;
+}
+.image-badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.slide-item-img {
+    width: 286px;
+    height: 235px;
+    overflow:hidden;
+    transition: 0.4s all;
+    border: 2px solid;
+    border-color: transparent;
+    position: relative;
+}
+.slide-main {
+    max-width: 290px;
+    margin: 20px auto;
+}
+
+.arrows {
+    cursor: pointer;
+}
+
+.image_product {
+    max-width: 460px;
+    max-height: 460px;
+    margin: auto;
+    display: block;
+}
+
+.image-product-main {
+    width: 470px;
+    height: 470px;
+}
+.mini-img-block {
+    height: 66px;
+    width: 66px;
+    padding: 2px;
+    border: 1px solid #ed1651;
+    cursor: pointer;
+    transition: 0.5s all;
+}
+
+
+
+
+.dws-wrapper {
+    min-width: 1170px;
+    margin: 0 auto;
+}
+ul.accordion {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+}
+ul.accordion li {
+    width: 300px;
+    overflow: hidden;
+    cursor: pointer;
+    display: block;
+    transition: 0.5s all;
+}
+ul.accordion .sl {
+    width: 570px;
+    overflow: hidden;
+    transition: 1s all;
+    height: 311px;
+}
+ul.accordion li:hover{
+    width: 570px;
+    transition: 0.5s all;
+    overflow: hidden;
+}
+.accordion li .sl img {
+    transition: 0.5s all;
+}
+.accordion li .sl img:hover{
+    transform: scale(1.1);
+}
+ul.accordion li:last-child{
+    width: 570px;
+}
+.accordion:hover li:last-child{
+    width: 300px;
+}
+ul.accordion li:last-child:hover {
+    width: 570px;
+}

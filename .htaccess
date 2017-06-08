@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteRule ^cat/([^/]+)/?$ index.php?page=cat&cat=$1 [L]
+RewriteRule ^product/([^/]+)/?$ index.php?page=product&id=$1 [L]
+RewriteRule ^lk/?$ index.php?page=lk [L]

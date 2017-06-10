@@ -21,7 +21,7 @@ $c = 1;
 while ($rg = pg_fetch_array($result_goods)) {
     $goods[$c] = $rg;
     $query_img = "SELECT img_path FROM osamylov_images WHERE id_good = ".$goods[$c]['id'];
-    $goods[$c]['img'] = pg_fetch_array(pg_query($dbconn,$query_img))['img_path'];
+    $goods[$c]['img'] = "$site_domain/".pg_fetch_array(pg_query($dbconn,$query_img))['img_path'];
     $goods[$c]['price'] = number_format($goods[$c]['price'], 0, ',', ' ')." руб.";
     $c++;
 }
@@ -43,9 +43,9 @@ while ($rg = pg_fetch_array($result_goods)) {
     <span class="cat-buts-page">';
                     for ($i=1;$i<=$total_pages;$i++) {
                         if ($page == $i) {
-                        echo "<a class='cat-but-page page-activ' href='?page=cat&cat=$id&p=$i'>$i</a>";
+                        echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
                         } else {
-                            echo "<a class='cat-but-page page-noactiv' href='?page=cat&cat=$id&p=$i'>$i</a>";
+                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
                         }
                     }
                 echo '</span>';
@@ -54,7 +54,7 @@ while ($rg = pg_fetch_array($result_goods)) {
 </div>
 <div class="cat-goods">
     <span class="cat-desc">
-            <img class="cat-desc-img" src="img/cat-img.jpg" alt="">
+            <?php echo  '<img class="cat-desc-img" src="'.$site_domain.'/img/cat-img.jpg" alt="">'; ?>
            <div class="cat-desc-head">Описание категории</div>
            <div class="cat-desc-text"><?php echo $desc; ?></div>
     </span>
@@ -62,14 +62,14 @@ while ($rg = pg_fetch_array($result_goods)) {
     if (isset ($goods[1]))
         $badge = $goods[1]['badge'];
     if ($badge == 'NEW')
-        $badge_path = "img/new.png";
+        $badge_path = "$site_domain/img/new.png";
     if ($badge == 'SALE')
-        $badge_path = "img/sale.png";
+        $badge_path = "$site_domain/img/sale.png";
     if ($badge == 'HOT')
-        $badge_path = "img/hot.png";
+        $badge_path = "$site_domain/img/hot.png";
     if ($badge == 'none')
         $badge_path = "";
-        echo '<a href="?page=product&id='.$goods[1]['id'].'"><span class="slide-item good-item-block-slide">
+        echo '<a href="'.$site_domain.'/product/'.$goods[1]['id'].'"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img src="'.$goods[1]['img'].'"  class="image-good-item-block" ><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[1]['name'].'</div>
@@ -90,15 +90,15 @@ if ($goods[1]['price_wo_discount'] != '') {
             if (isset ($goods[$i])) {
                 $badge = $goods[$i]['badge'];
                 if ($badge == 'NEW')
-                    $badge_path = "img/new.png";
+                    $badge_path = "$site_domain/img/new.png";
                 if ($badge == 'SALE')
-                    $badge_path = "img/sale.png";
+                    $badge_path = "$site_domain/img/sale.png";
                 if ($badge == 'HOT')
-                    $badge_path = "img/hot.png";
+                    $badge_path = "$site_domain/img/hot.png";
                 if ($badge == 'none')
                     $badge_path = "";
 
-                echo '<a href="?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -122,14 +122,14 @@ if ($goods[1]['price_wo_discount'] != '') {
             if (isset ($goods[$i])) {
                 $badge = $goods[$i]['badge'];
                 if ($badge == 'NEW')
-                    $badge_path = "img/new.png";
+                    $badge_path = "$site_domain/img/new.png";
                 if ($badge == 'SALE')
-                    $badge_path = "img/sale.png";
+                    $badge_path = "$site_domain/img/sale.png";
                 if ($badge == 'HOT')
-                    $badge_path = "img/hot.png";
+                    $badge_path = "$site_domain/img/hot.png";
                 if ($badge == 'none')
                     $badge_path = "";
-                echo '<a href="?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -146,7 +146,7 @@ if ($goods[1]['price_wo_discount'] != '') {
     </div>
     </span>
 <span class="cat-promo">
-    <img  class="cat-img-promo" src="img/cat-img-promo.jpg" alt="">
+    <?php echo '<img  class="cat-img-promo" src="'.$site_domain.'/img/cat-img-promo.jpg" alt="">'; ?>
     <div class="cat-promo-head">Заголовок пормо-товара</div>
     <div class="cat-promo-desc">Описание промо-товара</div>
     <div class="cat-promo-price">4 540 руб.</div>
@@ -158,14 +158,14 @@ if ($goods[1]['price_wo_discount'] != '') {
             if (isset ($goods[$i])) {
                 $badge = $goods[$i]['badge'];
                 if ($badge == 'NEW')
-                    $badge_path = "img/new.png";
+                    $badge_path = "$site_domain/img/new.png";
                 if ($badge == 'SALE')
-                    $badge_path = "img/sale.png";
+                    $badge_path = "$site_domain/img/sale.png";
                 if ($badge == 'HOT')
-                    $badge_path = "img/hot.png";
+                    $badge_path = "$site_domain/img/hot.png";
                 if ($badge == 'none')
                     $badge_path = "";
-                echo '<a href="?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -190,9 +190,9 @@ if ($goods[1]['price_wo_discount'] != '') {
     <span class="cat-buts-page">';
                     for ($i=1;$i<=$total_pages;$i++) {
                         if ($page == $i) {
-                        echo "<a class='cat-but-page page-activ' href='?page=cat&cat=$id&p=$i'>$i</a>";
+                        echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
                         } else {
-                            echo "<a class='cat-but-page page-noactiv' href='?page=cat&cat=$id&p=$i'>$i</a>";
+                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
                         }
                     }
                 echo '</span>';

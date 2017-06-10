@@ -25,7 +25,7 @@ $itogo_sum = 0;
                     $var = pg_fetch_array(pg_query($dbconn, "SELECT variant FROM osamylov_var_good WHERE id = ".$id_var))['variant'];
                     $name = $name." (".$var.")";
                 }
-                $img = pg_fetch_array(pg_query($dbconn, "SELECT osamylov_images.img_path FROM osamylov_images WHERE id_good = ".$id_good))['img_path'];
+                $img = "$site_domain/".pg_fetch_array(pg_query($dbconn, "SELECT osamylov_images.img_path FROM osamylov_images WHERE id_good = ".$id_good))['img_path'];
                 $cena = $res_good['price'];
                 $sum = $cena * $item['number'];
                 $itogo_sum += $sum;
@@ -43,7 +43,7 @@ $itogo_sum = 0;
                         </span>
                     <span class='col5'>
                         <span class='cart-item-sum' id='sum$id_good'>$sum руб.</span>
-                        <img class='cart-del-item' onclick='cartDelItem($id_good)' src='img/cart-del-item.png'></span>
+                        <img class='cart-del-item' onclick='cartDelItem($id_good)' src='$site_domain/img/cart-del-item.png'></span>
                   </div>";
             }
         } else
@@ -57,7 +57,7 @@ $itogo_sum = 0;
                 <div class="itogo">Итого:</div>
                 <div class="cart-itogo-sum" id="cart-zakaz-sum"><?php echo number_format($itogo_sum, 0, ',', ' ');?> руб.</div>
             </div>
-            <a href="?page=order1" class="cart-zakaz">Оформить заказ</a>
+            <?php echo '<a href="'.$site_domain.'/order1" class="cart-zakaz">Оформить заказ</a>';?>
         </div>
         
     </div>

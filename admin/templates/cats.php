@@ -22,14 +22,14 @@ $result = pg_query($dbconn, $query);
             $count = pg_fetch_row($result_count)[0];
             echo "<div class='cat-line' id='catline$id'>
                     <span class='col1' style='display: flex; height: 55px;'>
-                        <img src='../img/icon-folder-cat.png' class='img-folder-cat'>
+                        <img src='$site_domain/img/icon-folder-cat.png' class='img-folder-cat'>
                         <span class='admin-cats-name'>$name</span>
                     </span>
                     <span class='col2'>$count</span>";
             if ($count == 0) 
                     echo "<span class='col3' id='del_cat_block$id'><a onclick='delcat($id);'>удалить</a></span>";
             else echo "<span class='col3'></span>";
-            echo "<span class='col4' id='show_cat_block$id'><a href='?page=showcat&id=$id'>просмотр</a></span>
+            echo "<span class='col4' id='show_cat_block$id'><a href='$site_domain/showcat/$id/'>просмотр</a></span>
     </div>";
         }
         ?>

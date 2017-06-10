@@ -36,15 +36,15 @@ while ($r_goods = pg_fetch_array($result_goods)) {
         for ($i=($a*8);$i<($a*8+8);$i++){
             $badge = $goods[$i]['badge'];
             if ($badge == 'NEW')
-                $badge_path = "img/new.png";
+                $badge_path = "$site_domain/img/new.png";
             if ($badge == 'SALE')
-                $badge_path = "img/sale.png";
+                $badge_path = "$site_domain/img/sale.png";
             if ($badge == 'HOT')
-                $badge_path = "img/hot.png";
+                $badge_path = "$site_domain/img/hot.png";
             if ($badge == 'none')
                 $badge_path = "";
 
-            echo '<a href="?page=product&id='.$goods[$i]['id'].'"><span class="slide-item good-item-block-slide">
+            echo '<a href="'.$site_domain.'/product/'.$goods[$i]['id'].'"><span class="slide-item good-item-block-slide">
                 <div class="slide-item-img">
                     <img class="image-good-item-block" src="'.$goods[$i]['img'].'">
                     <img class="image-badge" src="'.$badge_path.'">
@@ -64,14 +64,6 @@ while ($r_goods = pg_fetch_array($result_goods)) {
     }
     ?>
 </div>
-<!--<div class="sliders">
-    <div class="sliders-1"> <img src="img/slide1.jpg"> <p class="head">Заголовок</p><p class="body">промо-товара</p></div>
-    <div class="sliders-2"> <img src="img/slide2.jpg"> <p class="head">Заголовок</p><p class="body">промо-товара</p></div>
-    <div class="sliders-3"> <img src="img/slide3.jpg"> <p class="head">Заголовок</p><p class="body">промо-товара</p></div>
-</di>-->
-
-
-
 
 
 <div class="sliders">
@@ -102,14 +94,15 @@ while ($r_goods = pg_fetch_array($result_goods)) {
         for ($a = 1; $a <= 8; $a ++) {
             $badge = $goods[$a]['badge'];
             if ($badge == 'NEW')
-                $badge_path = "img/new.png";
+                $badge_path = "$site_domain/img/new.png";
             if ($badge == 'SALE')
-                $badge_path = "img/sale.png";
+                $badge_path = "$site_domain/img/sale.png";
             if ($badge == 'HOT')
-                $badge_path = "img/hot.png";
+                $badge_path = "$site_domain/img/hot.png";
             if ($badge == 'none')
                 $badge_path = "";
-                echo '<a href="?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
+                //echo '<a href="?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
+            echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="'.$goods[$a]['img'].'"><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[$a]['name'].'</div>

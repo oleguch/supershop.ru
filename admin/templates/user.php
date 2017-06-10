@@ -31,10 +31,6 @@ $query_orders = "SELECT * FROM osamylov_orders WHERE id_user = ".$id." ORDER BY 
 $result_orders = pg_query($dbconn, $query_orders);
 $total_pages = ceil(pg_fetch_row(pg_query($dbconn ,"SELECT COUNT(id) FROM osamylov_orders WHERE id_user = $id"))[0] / 7);
 
-/*$res_total = pg_query($dbconn, "select price, numbers from sold_goods inner join goods on sold_goods.id_good = goods.id inner join orders on sold_goods.id_order = orders.id where orders.id_user = $id");
-while ($r_total = pg_fetch_array($res_total)) {
-    $total_all_orders += $r_total['price'] * $r_total['numbers'];
-}*/
 $res_total = pg_query($dbconn, "select * from osamylov_orders where id_user = ".$id);
 while ($r_total = pg_fetch_array($res_total)) {
     $total_all_orders += $r_total['total_price'];

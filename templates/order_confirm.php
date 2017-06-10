@@ -64,15 +64,6 @@
                     </div>";
             }
 
-                /*for ($i=1;$i<5;$i++) {
-                    echo "<div class='cart-line' id='cart-line1'>
-                            <span class='col1'>Название товара</span>
-                            <span class='col2'>25 600 руб.</span>
-                            <span class='col3'>1</span>
-                            <span class='col4'>25 600 руб.</span>
-                    </div>";
-                }*/
-
             ?>
         </div>
         <div class="zakaz-sostav-itogo">
@@ -146,7 +137,7 @@
                 </div>
             </span>
         </div>
-        <div href="?page=order4" class="btn-confirm confirm-order" style="margin-left: 30px;">Подтвердить заказ</div>
+        <?php echo '<div href="'.$site_domain.'/order4/" class="btn-confirm confirm-order" style="margin-left: 30px;">Подтвердить заказ</div>';?>
         
         
     </div>

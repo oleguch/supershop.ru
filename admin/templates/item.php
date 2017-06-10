@@ -74,13 +74,13 @@ $badge = @$r['badge'];
         if (isset($_GET['id'])) {
             //while (($r_img = pg_fetch_array($result_img)) && ($i <= 4)) {
             while ($r_img = pg_fetch_array($result_img))  {
-                $path = $r_img['img_path'];
+                $path = "$site_domain/".$r_img['img_path'];
                 $id_img = $r_img['id'];
                 $i++;
                 echo '<span class="admin-item-img-block" id="admin_img_block'.$i.'">
                 
                             <div class="img">
-                                <img src="../'.$path.'" id="img'.$i.'" style="width: 150px; height: 150px;" >
+                                <img src="'.$path.'" id="img'.$i.'" style="width: 150px; height: 150px;" >
                             </div>
                             <div class="text" id="text_img'.$i.'">
                                 <div class="img-item-change" value="Изменить" id="btn-upload-img-'.$i.'" onClick="upload_img('.$i.');">Изменить</div>
@@ -100,7 +100,7 @@ $badge = @$r['badge'];
                 $i++;
                 echo '<span class="admin-item-img-block" id="admin_img_block'.$i.'">
                         <div class="img">
-                           <img src="../img/img-0.jpg" id="img'.$i.'" style="width: 150px; height: 150px;">
+                           <img src="'.$site_domain.'/img/img-0.jpg" id="img'.$i.'" style="width: 150px; height: 150px;">
                         </div>
                         <div class="text" id="text_img'.$i.'">
                             <div class="img-item-upload" value="Загрузить" id="btn-upload-img-'.$i.'" onClick="upload_img('.$i.');">Загрузить</div>
@@ -114,7 +114,7 @@ $badge = @$r['badge'];
             $i++;
             echo '<span class="admin-item-img-block" id="admin_img_block'.$i.'">
                         <div class="img">
-                           <img src="../img/img-0.jpg" id="img'.$i.'" style="width: 150px; height: 150px;">
+                           <img src="'.$site_domain.'/img/img-0.jpg" id="img'.$i.'" style="width: 150px; height: 150px;">
                         </div>
                         <div class="text" id="text_img'.$i.'">
                             <div class="img-item-upload" value="Загрузить" id="btn-upload-img-'.$i.'" onClick="upload_img('.$i.');">Загрузить</div>

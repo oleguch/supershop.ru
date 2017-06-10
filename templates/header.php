@@ -4,7 +4,8 @@
 ?>
      
 
-     <a class="logo" href="index.php">
+  <!--   <a class="logo" href="index.php"> -->
+        <?php echo '<a class="logo" href="'.$site_domain.'">';?>
 	     <div class="logo1st">SUPER</div>
 	    <div class="logo2nd">SHOP</div>
     </a>
@@ -27,11 +28,11 @@
                 if (!isset($_SESSION['user'])) {
                 echo "
                 <div class='auth'>
-                    <img src='img/icon_lk.png'>
-                    <a class='auth-link' href='?page=auth'>Войти</a>
+                    <img src='$site_domain/img/icon_lk.png'>
+                    <a class='auth-link' href='$site_domain/auth/'>Войти</a>
                 </div>
                 <div class='reg'>
-                    <a href='?page=registration'>Регистрация</a>
+                    <a href='$site_domain/registration/'>Регистрация</a>
                 </div>";
                 }
                 else {
@@ -41,20 +42,20 @@
                    } else $status = $res_access['access_role'];
                     $email = $_SESSION['user']['email'];
                     echo "<div class='line-lk'>
-                        <img src='img/icon_lk.png'>
-                    <a  href='?page=lk'>$email
+                        <img src='$site_domain/img/icon_lk.png'>
+                    <a  href='$site_domain/lk/'>$email
                     </a>
                     <div class='lk-menu'>";
                     if ($status != 'none') {
                         echo "<div class='lk-menu-list'>
-                        <a href='admin/'>Админка</a>
+                        <a href='$site_domain/admin/'>Админка</a>
                         </div>";
                     }
                    echo "<div class='lk-menu-list'>
-                            <a href='?page=lk'>Личный кабинет</a>
+                            <a href='$site_domain/lk/'>Личный кабинет</a>
                             </div>
                         <div class='lk-menu-list'>
-                        <a href='?exit=true'>Выход</a>
+                        <a href='$site_domain/?exit=true'>Выход</a>
                         </div>
                     </div>
                     </div>";
@@ -74,7 +75,7 @@
                 $total_sum += $price * $numbers;
             }
             $total_sum = number_format($total_sum, 0, ",", " ");
-            echo '<a href="?page=cart"><div class="cart">
+            echo '<a href="'.$site_domain.'/cart/"><div class="cart">
            <div class="cart-text">
                 <div class="summma">
                    <span class="sum" id="cart_total_sum">'.$total_sum.'</span>
@@ -82,7 +83,7 @@
                 </div>
                 <div class="number-items" id="cart_total_goods">'.$total_goods.' предмета</div>
             </div>
-            <img src="img/icon-cart.png">
+            <img src="'.$site_domain.'/img/icon-cart.png">
         </div></a>';
         }
         ?>

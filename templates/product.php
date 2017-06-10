@@ -18,7 +18,7 @@ $result_img_goods = pg_query($dbconn, $query_img_good);
 $img = [];
 $c_img = 1;
 while ($r_img = pg_fetch_array($result_img_goods)){
-    $img[$c_img] = $r_img['img_path'];
+    $img[$c_img] = "$site_domain/".$r_img['img_path'];
     $c_img++;
 }
 $i=1;
@@ -37,7 +37,7 @@ $result_goods = pg_query($dbconn, $query_goods);
 while ($rg = pg_fetch_array($result_goods)) {
     $goods[$c] = $rg;
     $query_img = "SELECT img_path FROM osamylov_images WHERE id_good = ".$goods[$c]['id'];
-    $goods[$c]['img'] = pg_fetch_array(pg_query($dbconn,$query_img))['img_path'];
+    $goods[$c]['img'] = "$site_domain/".pg_fetch_array(pg_query($dbconn,$query_img))['img_path'];
     $goods[$c]['price'] = number_format($goods[$c]['price'], 0, ',', ' ')." руб.";
     $c++;
 }
@@ -112,7 +112,7 @@ while ($rg = pg_fetch_array($result_goods)) {
         <?php
             if ($badge_good != 'SALE') {
                 echo '<div class="product-availability">
-            <img src="img/icon_availability.png" alt="">
+            <img src="'.$site_domain.'/img/icon_availability.png" alt="">
             Есть в наличии
         </div>';
             } else {
@@ -130,7 +130,7 @@ while ($rg = pg_fetch_array($result_goods)) {
     if ($badge_good != 'SALE') {
         echo '<div class="prodict-buy-div">
         <button type="submit"  class="btn-buy" id="add_good_to_cart" <?php echo "data-id_good=".$id; ?>>
-            <img src="img/icon-cart-buy.png" alt="">
+            <img src="'.$site_domain.'/img/icon-cart-buy.png" alt="">
             КУПИТЬ
         </button>
     </div>';
@@ -138,21 +138,21 @@ while ($rg = pg_fetch_array($result_goods)) {
     ?>
 
     <div class="prod-dop-info">
-        <img class="prod-icons" src="img/icon_car.png" alt="">
+        <?php echo ' <img class="prod-icons" src="'.$site_domain.'/img/icon_car.png" alt="">';?>
         <div class="prod-icon-text">
             <div class="prod-icon-text1">Бесплатная доставка</div>
             <div class="prod-icon-text2">по всей России</div>
         </div>
     </div>
     <div class="prod-dop-info">
-        <img class="prod-icons" src="img/icon_person.png" alt="">
+        <?php echo  '<img class="prod-icons" src="'.$site_domain.'/img/icon_person.png" alt="">';?>
         <div class="prod-icon-text">
             <div class="prod-icon-text1">Горячая линия</div>
             <div class="prod-icon-text2">8 800 000-0-00</div>
         </div>
     </div>
     <div class="prod-dop-info">
-        <img class="prod-icons" src="img/icon_present.png" alt="">
+        <?php echo '<img class="prod-icons" src="'.$site_domain.'/img/icon_present.png" alt="">';?>
         <div class="prod-icon-text">
             <div class="prod-icon-text1">Подарки</div>
             <div class="prod-icon-text2">каждому покуаптелю</div>
@@ -168,8 +168,10 @@ while ($rg = pg_fetch_array($result_goods)) {
 <div class="header-list-items">
     <div class="text">Другие товары из категории "<?php echo $name_cat; ?>"</div>
     <div class="arrow-slide" id="arrow-slide"> 
-        <img src="img/arrow-left-noactiv.png" class="arrows" id="prev" aria-disabled="true">
-        <img src="img/arrow-right-activ.png" class="arrows" id="next" aria-disabled="false">
+        <?php echo '
+            <img src="'.$site_domain.'/img/arrow-left-noactiv.png" class="arrows" id="prev" aria-disabled="true">
+            <img src="'.$site_domain.'/img/arrow-right-activ.png" class="arrows" id="next" aria-disabled="false">
+        ';?>
         
     </div>
 </div>
@@ -179,14 +181,14 @@ while ($rg = pg_fetch_array($result_goods)) {
         for ($a = 1; $a <= sizeof($goods); $a ++) {
             $badge = $goods[$a]['badge'];
             if ($badge == 'NEW')
-                $badge_path = "img/new.png";
+                $badge_path = "$site_domain/img/new.png";
             if ($badge == 'SALE')
-                $badge_path = "img/sale.png";
+                $badge_path = "$site_domain/img/sale.png";
             if ($badge == 'HOT')
-                $badge_path = "img/hot.png";
+                $badge_path = "$site_domain/img/hot.png";
             if ($badge == 'none')
                 $badge_path = "";
-                echo '<a href="?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'/"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="'.$goods[$a]['img'].'"><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[$a]['name'].'</div>
@@ -204,13 +206,5 @@ while ($rg = pg_fetch_array($result_goods)) {
     ?>
    
     </div>
-  
-    
-    <!--
-    <div class="slide-item">
-        <div class="slide-item-img"><img src="img/item-img.jpg"></div>
-        <div class="slide-item-name">Название товара</div>
-        <div class="slide-item-price">4 540руб.</div>
-    </div>-->
 </div>
 

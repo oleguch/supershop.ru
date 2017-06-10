@@ -1,3 +1,4 @@
+var site_domain = 'http://supershop.ru';
 function plus(n) {
     var count = document.getElementById("count" + n);
     var cena = document.getElementById('cena' + n);
@@ -23,7 +24,7 @@ function minus(n) {
 }
 function change_count_goods_cart(id, type) {
     $.ajax({
-        url: "work.php",
+        url: site_domain + "/work.php",
         type: "post",
         data: ("change_count_cart=" + id + "&type=" + type),
         success: function(answer) {
@@ -65,22 +66,18 @@ function cartDelItem(line) {
         itogo();
         console.log("Количество товара в корзине: " + $('.cart-line').length);
         if ($('.cart-line').length == 0)
-            location.href = "index.php";
+            location.href = site_domain;
     });
-    
-    
 }
 function del_good_from_cart(id_good) {
     $.ajax({
-        url: "work.php",
+        url: site_domain + "/work.php",
         type: "post",
         data: ("del_good_from_cart=" + id_good),
         success: function(answer) {
             console.log("Отправка удаленного товара в php");
             if (answer == 'ok') {
                 console.log("ok");
-                //location.href = "index.php?page=cats";
-                //del_good_from_order_del(id_sold_good);
             } else {
                 console.log(answer);
                 $("#answer").html(answer);
@@ -105,14 +102,13 @@ function cancel_del_good(line) {
 function deleting_good_from_order (id_sold_good) {
     console.log("Удаление товара из заказа");
     $.ajax({
-        url: "../work.php",
+        url: site_domain + "/work.php",
         type: "post",
         data: ("delsoldgood=" + id_sold_good),
         success: function(answer) {
             console.log("Отправка удаленного товара в php");
             if (answer == 'ok') {
                 console.log("ok");
-                //location.href = "index.php?page=cats";
                 del_good_from_order_del(id_sold_good);
             } else {
                 console.log(answer);
@@ -199,17 +195,17 @@ $(document).ready(function(){
         var value_next = next.getAttribute('aria-disabled');
         if (value_next == 'true') {
           console.log('Вперед нельзя');
-          $('#next').attr('src','img/arrow-right-noactiv.png');
+          $('#next').attr('src', site_domain + '/img/arrow-right-noactiv.png');
         } else {
           console.log('Вперед можно');
-          $('#next').attr('src','img/arrow-right-activ.png');
+          $('#next').attr('src', site_domain + '/img/arrow-right-activ.png');
         }
         if (value_prev == 'true') {
           console.log('Обратно нельзя');
-          $('#prev').attr('src','img/arrow-left-noactiv.png');
+          $('#prev').attr('src',site_domain + '/img/arrow-left-noactiv.png');
         } else {
           console.log('Обратно можно');
-          $('#prev').attr('src','img/arrow-left-activ.png');
+          $('#prev').attr('src', site_domain + '/img/arrow-left-activ.png');
         }
     }
     $('#prod_img_prev').click(function() {
@@ -241,17 +237,17 @@ $(document).ready(function(){
         var value_next = prod_img_next.getAttribute('aria-disabled');
         if (value_next == 'true') {
           console.log('Вперед нельзя');
-          $('#prod_img_next').attr('src','img/img-arrow-right-noactiv.png');
+          $('#prod_img_next').attr('src',site_domain + '/img/img-arrow-right-noactiv.png');
         } else {
           console.log('Вперед можно');
-          $('#prod_img_next').attr('src','img/img-arrow-right-activ.png');
+          $('#prod_img_next').attr('src', site_domain + '/img/img-arrow-right-activ.png');
         }
         if (value_prev == 'true') {
           console.log('Обратно нельзя');
-          $('#prod_img_prev').attr('src','img/img-arrow-left-noactiv.png');
+          $('#prod_img_prev').attr('src',site_domain + '/img/img-arrow-left-noactiv.png');
         } else {
           console.log('Обратно можно');
-          $('#prod_img_prev').attr('src','img/img-arrow-left-activ.png');
+          $('#prod_img_prev').attr('src',site_domain + '/img/img-arrow-left-activ.png');
         }
     }
     
@@ -260,17 +256,17 @@ $(document).ready(function(){
         var value_next = next_4.getAttribute('aria-disabled');
         if (value_next == 'true') {
           console.log('Вперед нельзя');
-          $('#next_4').attr('src','img/arrow-right-noactiv.png');
+          $('#next_4').attr('src',site_domain + '/img/arrow-right-noactiv.png');
         } else {
           console.log('Вперед можно');
-          $('#next_4').attr('src','img/arrow-right-activ.png');
+          $('#next_4').attr('src',site_domain + '/img/arrow-right-activ.png');
         }
         if (value_prev == 'true') {
           console.log('Обратно нельзя');
-          $('#prev_4').attr('src','img/arrow-left-noactiv.png');
+          $('#prev_4').attr('src',site_domain + '/img/arrow-left-noactiv.png');
         } else {
           console.log('Обратно можно');
-          $('#prev_4').attr('src','img/arrow-left-activ.png');
+          $('#prev_4').attr('src',site_domain + '/img/arrow-left-activ.png');
         }
     }
     
@@ -296,7 +292,7 @@ $(document).ready(function() {
 });
 function change_status (id_order, status) {
     $.ajax({
-        url: "../work.php",
+        url: site_domain + "/work.php",
         type: "post",
         data: ('change_status_id=' + id_order + '&change_status_st=' + status),
         success: function(answer) {
@@ -331,7 +327,7 @@ $(document).ready(function() {
 });
 function change_role (id_user, status) {
     $.ajax({
-        url: "../work.php",
+        url: site_domain + "/work.php",
         type: "post",
         data: ('change_role_id=' + id_user + '&change_role_st=' + status),
         success: function(answer) {
@@ -363,14 +359,14 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("asd");
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#formauth").serialize(),
             success: function(answer) {
                 console.log("qqq");
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = "index.php";
+                     location.href = site_domain;
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -386,13 +382,13 @@ $(document).ready(function() {
     $("#btn-fast-login").click(function(event){
         event.preventDefault();
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#formfastlogin").serialize(),
             success: function(answer) {
                 console.log("qqq");
                 if (answer == 'ok') {
-                    location.href = "index.php?page=order2";
+                    location.href = site_domain + "/order2/";
                 } else {
                     console.log(answer);
                     $("#answer2").html(answer);
@@ -409,14 +405,14 @@ $(document).ready(function() {
         event.preventDefault();
         console.log($("#formreg").serialize());
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#formreg").serialize(),
             success: function(answer) {
                 console.log("qqq: " + answer);
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = "index.php";
+                     location.href = site_domain;
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -435,7 +431,7 @@ $(document).ready(function() {
         event.preventDefault();
         console.log($("#formlk").serialize());
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#formlk").serialize(),
             success: function(answer) {
@@ -461,14 +457,14 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("asd");
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#form-order-newuser").serialize(),
             success: function(answer) {
                 console.log("qqq");
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = "index.php?page=order2";
+                     location.href = site_domain + "/order2/";
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -485,14 +481,14 @@ $(document).ready(function() {
         event.preventDefault();
         console.log("asd");
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "get",
             data: $("#form-order-addr").serialize(),
             success: function(answer) {
                 console.log("qqq");
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = "index.php?page=order3";
+                     location.href = site_domain + "/order3/";
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -593,81 +589,23 @@ function upload_img(a) {
     $("#input_img" + a).click();
 }
 //============================УДАЛЕНИЕ КАРТИНКИ
-/*function del_img(id, i) {
-    console.log(id + "Удаление картинки");
-    $.ajax({
-            url: "../work.php",
-            type: "get",
-            data: ("delimg=" + id),
-            success: function(answer) {
-                console.log("qqq");
-                if (answer == 'ok') {
-                    console.log("ok");
-                    //location.reload();
-                    //$("#admin_img_block" + i).html('');
-                    //$("#admin_img_block" + i).append('<div class="img"><img src="../img/img-0.jpg" id="img' + i + '" style="width: 150px; height: 150px;"></div><div class="text"><div class="img-item-upload" value="Загрузить" id="btn-upload-img-' + i + '" onClick="upload_img(' + i + ');">Загрузить</div><div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div></div><input type="file" id="input_img' + i + '" style="display: none;" data-id_img="' + i + '" name="input_img' + i + '"><div class="img-item-deliting">Изображение удалено</div>');
-                    //$("#admin_img_block2")[0].innerHTML = '<img src="../img/img-0.jpg" id="img2" style="width: 150px; height: 150px;"><input type="file" id="input_img2" style="display: block;" name="input_img2">';
-                    $('#btn-del-img-'+i).css('display', 'none');
-                    //$('#btn-upload-img-'+i).css('display', 'none');
-                    $('#btn-upload-img-'+i).text('Загрузить');
-                    $('#img' + i).attr('src','../img/img-0.jpg');
-                    //$("#text_img" + i).append('<div class="img-item-upload" value="Загрузить" id="btn-upload-img-' + i + '" onClick="upload_img(' + i + ');">Загрузить</div><div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div>');
-                    $("#text_img" + i).append('<div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div>');
-                    $('#admin_img_block' + i).append('<div class="img-item-deliting" id="image-deleting-' + i + '">Изображение удалено</div>');
-                    $("#changeimg" + i).remove();
-                    console.log("Добавление блока");
-                } else {
-                    console.log(answer);
-                    $("#answer").html(answer);
-                }
-            }
-    });
-}*/
-
 
 function del_img(id, i) {
     console.log(id + "Удаление картинки");
     $('#btn-del-img-'+i).css('display', 'none');
     $('#btn-upload-img-'+i).text('Загрузить');
-    $('#img' + i).attr('src','../img/img-0.jpg');
+    $('#img' + i).attr('src',site_domain + '/img/img-0.jpg');
     $("#text_img" + i).append('<div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div>');
     $('#admin_img_block' + i).append('<div class="img-item-deliting" id="image-deleting-' + i + '">Изображение удалено</div>');
     console.log("Добавление блока");
     $('#delimgblock' + i).attr('value', i);
     $('#delimgid' + i).attr('value', id);
-    /*$.ajax({
-            url: "../work.php",
-            type: "get",
-            data: ("delimg=" + id),
-            success: function(answer) {
-                console.log("qqq");
-                if (answer == 'ok') {
-                    console.log("ok");
-                    //location.reload();
-                    //$("#admin_img_block" + i).html('');
-                    //$("#admin_img_block" + i).append('<div class="img"><img src="../img/img-0.jpg" id="img' + i + '" style="width: 150px; height: 150px;"></div><div class="text"><div class="img-item-upload" value="Загрузить" id="btn-upload-img-' + i + '" onClick="upload_img(' + i + ');">Загрузить</div><div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div></div><input type="file" id="input_img' + i + '" style="display: none;" data-id_img="' + i + '" name="input_img' + i + '"><div class="img-item-deliting">Изображение удалено</div>');
-                    //$("#admin_img_block2")[0].innerHTML = '<img src="../img/img-0.jpg" id="img2" style="width: 150px; height: 150px;"><input type="file" id="input_img2" style="display: block;" name="input_img2">';
-                    $('#btn-del-img-'+i).css('display', 'none');
-                    //$('#btn-upload-img-'+i).css('display', 'none');
-                    $('#btn-upload-img-'+i).text('Загрузить');
-                    $('#img' + i).attr('src','../img/img-0.jpg');
-                    //$("#text_img" + i).append('<div class="img-item-upload" value="Загрузить" id="btn-upload-img-' + i + '" onClick="upload_img(' + i + ');">Загрузить</div><div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div>');
-                    $("#text_img" + i).append('<div class="img-item-clear" id="btn-clear-img-' + i + '" onClick="clear_img(' + i + ');">Очистить</div>');
-                    $('#admin_img_block' + i).append('<div class="img-item-deliting" id="image-deleting-' + i + '">Изображение удалено</div>');
-                    $("#changeimg" + i).remove();
-                    console.log("Добавление блока");
-                } else {
-                    console.log(answer);
-                    $("#answer").html(answer);
-                }
-            }
-    });*/
 }
 
 //===============================ОЧИСТКА КАРТИНКИ ТОВАРА
 function clear_img(a) {
     console.log("Очищение картинки");
-    $('#img' + a).attr('src', "../img/img-0.jpg");
+    $('#img' + a).attr('src', site_domain + "/img/img-0.jpg");
     $("#input_img" + a).prop('value', null);
     $('#btn-clear-img-'+a).css('display', 'none');
     console.log("очищено?");
@@ -852,26 +790,6 @@ $(document).ready(function(){
 });
 
 
-
-//////////////////ПРОВЕРКА УДАЛЕНИЯ ВАРИАНТА ТОВАРА
-/*function delvar(id) {
-        console.log("Удаление варианта товара");
-        $.ajax({
-            url: "../work.php",
-            type: "get",
-            data: ("delvar=" + id),
-            success: function(answer) {
-                if (answer == 'ok') {
-                    console.log("ok");
-                    //location.href = "index.php?page=cats";
-                    location.reload();
-                } else {
-                    console.log(answer);
-                    $("#answer").html(answer);
-                }
-            }
-    });
-}*/
 function delvar(id) {
     console.log("Удаление варианта товара");
     $('#good-var' + id).attr('value', '');
@@ -884,7 +802,7 @@ function delvar(id) {
             console.log("Начинаем добавлять товар в корзину");
             event.preventDefault();
             $.ajax({
-                url: "work.php",
+                url: site_domain + "/work.php",
                 type: "POST",
                 data: $("#good_info_to_cart").serialize(),
                 success: function(answer) {
@@ -908,13 +826,13 @@ function delvar(id) {
 $(document).ready(function() {
     $('.confirm-order').click(function () {
         $.ajax({
-            url: "work.php",
+            url: site_domain + "/work.php",
             type: "post",
             data: ("confirm_order"),
             success: function(answer) {
                 if (answer == 'ok') {
                     console.log("ok");
-                    location.href = "index.php?page=order4";
+                    location.href = site_domain + "/order4/";
                     //location.reload();
                 } else {
                     console.log(answer);

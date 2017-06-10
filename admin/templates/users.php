@@ -56,7 +56,7 @@
                 echo "<option value='seller' style='color: #a01ba2;' selected>Продавец</option>";
             } else echo "<option value='seller' style='color: #a01ba2;'>Продавец</option>";
             echo "</select></span>
-                    <span class='col5' id='see_user$id'><a href='?page=user&id=$id'>просмотр</a></span>
+                    <span class='col5' id='see_user$id'><a href='$site_domain/user/$id/'>просмотр</a></span>
                 </div>";
         }
         ?>

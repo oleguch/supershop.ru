@@ -14,7 +14,7 @@ unset($_SESSION['cart_goods']);
     <div class="zakaz-done-text">Спасибо за ваш заказ.<br><br>В ближайшее время с вами свяжется оператор для уточнения времени доставки.</div>
         
                 
-<a href="index.php" class="btn-confirm">Вернуться в магазин</a>
+<?php echo '<a href="'.$site_domain.'" class="btn-confirm">Вернуться в магазин</a>';?>
     </div>
 </div>
 

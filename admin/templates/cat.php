@@ -38,7 +38,7 @@ $total_pages = ceil(pg_fetch_row(pg_query($dbconn ,"SELECT COUNT(id) FROM osamyl
                         <span class='col1'>$name</span>
                         <span class='col2'>$price руб.</span>
                         <span class='col3' id='del_good_line_block$id'><a onclick='delgood_line($id);'>удалить</a></span>
-                        <span class='col4' data-id_cat=$id_cat id='show_good_block$id'><a href='?page=showgood&id=$id&id_cat=$id_cat'>просмотр</a></span>
+                        <span class='col4' data-id_cat=$id_cat id='show_good_block$id'><a href='$site_domain/item/cat$id_cat/$id/'>просмотр</a></span>
                 </div>";
     };
     ?>
@@ -58,6 +58,6 @@ $total_pages = ceil(pg_fetch_row(pg_query($dbconn ,"SELECT COUNT(id) FROM osamyl
 </div><br><br>
 <div class="add-new-cat-block">
   <?php
-    echo "<a href='?page=showgood&id_cat=$id_cat' class='link-add-newgood'>Добавить новый товар</a>";
+    echo "<a href='$site_domain/newgood/$id_cat/' class='link-add-newgood'>Добавить новый товар</a>";
    ?>
 </div>

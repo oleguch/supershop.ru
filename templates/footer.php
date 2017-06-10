@@ -5,5 +5,5 @@
         Разработан специально для «Всероссийской Школы Программирования» <br>
         http://bedev.ru/
     </div>
-    <div id="up" class="up">Наверх <img src="img/footer_arrow_up.png"> </div>
+    <?php echo '<div id="up" class="up">Наверх <img src="'.$site_domain.'/img/footer_arrow_up.png"> </div>';?>
 </div>

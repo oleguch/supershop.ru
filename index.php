@@ -1,5 +1,6 @@
 <?php
-$site_domain = 'http://localhost/supershop.ru';
+#$site_domain = 'http://localhost/supershop.ru';
+$site_domain = 'http://supershop.ru';
 ?>
 <!DOCTYPE html>
 <html>

@@ -49,9 +49,9 @@ $total_pages = ceil(pg_fetch_row(pg_query($dbconn ,"SELECT COUNT(id) FROM osamyl
                 if ($total_pages > 1) {
                     for ($i=1;$i<=$total_pages;$i++)
                         if ($page == $i) 
-                            echo "<a class='btn-pages btn-page-activ' href='?page=showcat&id=$id_cat&p=$i'>$i</a>";
+                            echo "<a class='btn-pages btn-page-activ' href='$site_domain/showcat/$id_cat/$i'>$i</a>";
                         else 
-                            echo "<a class='btn-pages btn-page-noactiv' href='?page=showcat&id=$id_cat&p=$i'>$i</a>";
+                            echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/showcat/$id_cat/$i'>$i</a>";
                 }
             ?>
             

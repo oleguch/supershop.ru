@@ -22,10 +22,6 @@
 	</div>
 	<div class="header-content-auth-reg">
 		Новый пользователь <br>
-		<a href="?page=registration"><button type="button" class="btn-reg">Зарегистрироваться</button> </a>
+		<?php echo "<a href='$site_domain/registration'><button type='button' class='btn-reg'>Зарегистрироваться</button> </a>"; ?>
 	</div>
 </div>
-<script type="text/javascript">
-    
-
-</script>

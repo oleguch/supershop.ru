@@ -4,12 +4,6 @@ $query = "SELECT * FROM osamylov_orders INNER JOIN osamylov_delivery ON osamylov
 $result = pg_query($dbconn, $query);
 $r = pg_fetch_object($result, 0);
 $status = $r->status;
-/*
-pg_query($dbconn, "INSERT INTO sold_goods (id_order, id_good, numbers) VALUES (2, 43, 3)");
-pg_query($dbconn, "INSERT INTO sold_goods (id_order, id_good, numbers, id_variant) VALUES (2, 16, 1, 11)");
-pg_query($dbconn, "INSERT INTO sold_goods (id_order, id_good, numbers, id_variant) VALUES (2, 87, 1, 59)");
-pg_query($dbconn, "INSERT INTO sold_goods (id_order, id_good, numbers) VALUES (2, 119, 3)");*/
-
 
 ?>
    
@@ -23,7 +17,7 @@ pg_query($dbconn, "INSERT INTO sold_goods (id_order, id_good, numbers) VALUES (2
     <div class="admin-head-user">содержимое заказа</div>
     <?php
     //$query_goods = "SELECT * FROM sold_goods WHERE id_order = ".$id;
-    $query_goods = "select osamylov_sold_goods.id, osamylov_goods.name, osamylov_sold_goods.price, osamylov_sold_goods.numbers, osamylov_var_good.variant from osamylov_sold_goods inner join osamylov_goods on osamylov_sold_goods.id_good = osamylov_goods.id LEFT JOIN osamylov_var_good on osamylov_sold_goods.id_variant = osamylov_var_good.id WHERE osamylov_sold_goods.id_order = ".$id;
+    $query_goods = 'select osamylov_sold_goods.id, osamylov_goods.name, osamylov_sold_goods.price, osamylov_sold_goods.numbers, osamylov_var_good.variant from osamylov_sold_goods inner join osamylov_goods on osamylov_sold_goods.id_good = osamylov_goods.id LEFT JOIN osamylov_var_good on osamylov_sold_goods.id_variant = osamylov_var_good.id WHERE osamylov_sold_goods.id_order = '.$id;
     $result_goods = pg_query($dbconn, $query_goods);
     $total_goods = 0;
     while ($r_goods = pg_fetch_object($result_goods)){

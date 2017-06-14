@@ -22,8 +22,8 @@ while ($r_goods = pg_fetch_array($result_goods)) {
 <div class="header-list-items">
     <div class="text">Новые товары</div>
     <div class="arrow-slide" id="arrow-slide"> 
-        <img src="img/arrow-left-noactiv.png" class="arrows" id="prev" aria-disabled="true">
-        <img src="img/arrow-right-activ.png" class="arrows" id="next" aria-disabled="false">
+        <?php echo "<img src='$site_domain/img/arrow-left-noactiv.png' class='arrows' id='prev' aria-disabled='true'>
+        <img src='$site_domain/img/arrow-right-activ.png' class='arrows' id='next' aria-disabled='false'>";?>
     </div>
 </div>
 <div class="slides-items sl1" id="slide1">

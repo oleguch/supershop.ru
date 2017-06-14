@@ -55,7 +55,7 @@
                             <a href='$site_domain/lk/'>Личный кабинет</a>
                             </div>
                         <div class='lk-menu-list'>
-                        <a href='$site_domain/?exit=true'>Выход</a>
+                        <a href='$site_domain/exit'>Выход</a>
                         </div>
                     </div>
                     </div>";

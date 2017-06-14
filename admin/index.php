@@ -7,6 +7,7 @@
 </head>
 <body>
 <?php
+$site_domain = 'http://supershop.ru';
     session_start();
 //$dbconn=pg_connect("host=localhost dbname=osamylov_db user=osamylov password=384osamylov231");
 //if ($dbconn===false) {
@@ -39,8 +40,9 @@ echo '
 ?>
     
 <span class="left-sidebar">
-    <?php echo  '<a class="logo" href="'.$site_domain.'">';?>
-	     <div class="logo1st">SUPER</div>
+            <?php echo "<a class='logo' href='$site_domain'>";?>
+
+    <div class="logo1st">SUPER</div>
 	    <div class="logo2nd">SHOP</div>
     </a>
     <?php
@@ -130,3 +132,6 @@ echo '
 </span>
 
 </body>
+<script>
+    $(".left-sidebar").height($(".right-sidebar").height());
+</script>

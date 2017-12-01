@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <?php
+    //$site_domain = 'http://supershop.ru';
+    //$site_domain = 'http://test.14school.ru';
+    $site_domain = 'http://shoggoth.ru/edu/09/osamylov/supershop.ru';
+    //$site_domain = 'http://skill.box/diplom';
+    ?>
     <meta charset="utf-8">
 	<title>Super Shop - Администрирование</title>
 	 <?php echo '<link rel="stylesheet" type="text/css" href="'.$site_domain.'/styles/style_admin.css">';?>
 </head>
 <body>
 <?php
-$site_domain = 'http://supershop.ru';
+
     session_start();
-//$dbconn=pg_connect("host=localhost dbname=osamylov_db user=osamylov password=384osamylov231");
-//if ($dbconn===false) {
     $dbconn = pg_connect("host=localhost dbname=twi2_sql user=postgres password=330117");
     if ($dbconn === false) {
         echo "Error opening";
@@ -61,7 +65,8 @@ echo '
     </a>
     <?php
     if ($status == 'admin') {
-    echo "<a href='$site_domain/users/'>";
+    //echo "<a href='$site_domain/users/'>";
+    echo "<a href='$site_domain/admin/?page=users'>";
 
         if ((isset($_GET['page'])) && (($_GET["page"] == 'users') || ($_GET["page"] == 'user'))) {
             echo'<div class="admin-menu admin-menu-activ">
@@ -74,7 +79,8 @@ echo '
     </div>
     </a>";
     }
-    echo "<a href='$site_domain/cats/'>";
+    //echo "<a href='$site_domain/admin/cats/'>";
+    echo "<a href='$site_domain/admin/?page=cats'>";
 
 
         if ((isset($_GET['page'])) && (($_GET['page'] == 'cats') || ($_GET['page'] == 'showcat') || ($_GET['page'] == 'showgood'))) {

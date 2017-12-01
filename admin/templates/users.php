@@ -55,8 +55,9 @@
             if ($status == 'seller') {
                 echo "<option value='seller' style='color: #a01ba2;' selected>Продавец</option>";
             } else echo "<option value='seller' style='color: #a01ba2;'>Продавец</option>";
-            echo "</select></span>
-                    <span class='col5' id='see_user$id'><a href='$site_domain/user$id/'>просмотр</a></span>
+            echo "</select></span>".
+                    //<span class='col5' id='see_user$id'><a href='$site_domain/user$id/'>просмотр</a></span>
+                "<span class='col5' id='see_user$id'><a href='$site_domain/admin/?page=user&id=$id'>просмотр</a></span>
                 </div>";
         }
         ?>
@@ -66,9 +67,11 @@
                 if ($total_pages > 1) {
                     for ($i=1;$i<=$total_pages;$i++) {
                         if ($page == $i) {
-                        echo "<a class='btn-pages btn-page-activ' href='$site_domain/users/$i'>$i</a>";
+                        //echo "<a class='btn-pages btn-page-activ' href='$site_domain/users/$i'>$i</a>";
+                            echo "<a class='btn-pages btn-page-activ' href='$site_domain/admin/?page=users&p=$i'>$i</a>";
                         } else {
-                            echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/users/$i'>$i</a>";
+                            //echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/users/$i'>$i</a>";
+                            echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/admin/?page=users&p=$i'>$i</a>";
                         }
                     }
                 }

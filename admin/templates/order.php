@@ -95,6 +95,6 @@ $status = $r->status;
 </div>
 <div class="admin-user-delete">
    <?php
-    echo '<a href="../work.php?cancel_order='.$id.'">Отменить заказ</a>';
+    echo "<a href='$site_domain/work.php?cancel_order=$id'>Отменить заказ</a>";
     ?>
 </div>

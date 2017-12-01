@@ -1,4 +1,7 @@
-var site_domain = 'http://supershop.ru';
+//var site_domain = 'http://supershop.ru';
+//var site_domain = 'http://test.14school.ru';
+var site_domain = 'http://shoggoth.ru/edu/09/osamylov/supershop.ru';
+//var site_domain = 'http://skill.box/diplom';
 function plus(n) {
     var count = document.getElementById("count" + n);
     var cena = document.getElementById('cena' + n);
@@ -388,7 +391,8 @@ $(document).ready(function() {
             success: function(answer) {
                 console.log("qqq");
                 if (answer == 'ok') {
-                    location.href = site_domain + "/order2/";
+                    //location.href = site_domain + "/order2/";
+                    location.href = site_domain + "/?page=order2";
                 } else {
                     console.log(answer);
                     $("#answer2").html(answer);
@@ -464,7 +468,8 @@ $(document).ready(function() {
                 console.log("qqq");
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = site_domain + "/order2/";
+                     //location.href = site_domain + "/order2/";
+                    location.href = site_domain + "/?page=order2";
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -488,7 +493,8 @@ $(document).ready(function() {
                 console.log("qqq");
                 if (answer == 'ok') {
                     console.log("ok");
-                     location.href = site_domain + "/order3/";
+                     //location.href = site_domain + "/order3/";
+                    location.href = site_domain + "/?page=order3";
                 } else {
                     console.log(answer);
                     $("#answer").html(answer);
@@ -833,7 +839,8 @@ $(document).ready(function() {
             success: function(answer) {
                 if (answer == 'ok') {
                     console.log("ok");
-                    location.href = site_domain + "/order4/";
+                    //location.href = site_domain + "/order4/";
+                    location.href = site_domain + "/?page=order4";
                     //location.reload();
                 } else {
                     console.log(answer);

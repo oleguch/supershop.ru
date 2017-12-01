@@ -29,7 +29,8 @@ $result = pg_query($dbconn, $query);
             if ($count == 0) 
                     echo "<span class='col3' id='del_cat_block$id'><a onclick='delcat($id);'>удалить</a></span>";
             else echo "<span class='col3'></span>";
-            echo "<span class='col4' id='show_cat_block$id'><a href='$site_domain/showcat/$id/'>просмотр</a></span>
+            //echo "<span class='col4' id='show_cat_block$id'><a href='$site_domain/showcat/$id/'>просмотр</a></span>
+            echo "<span class='col4' id='show_cat_block$id'><a href='$site_domain/admin/?page=showcat&id=$id'>просмотр</a></span>
     </div>";
         }
         ?>

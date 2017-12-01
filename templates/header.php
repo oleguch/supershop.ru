@@ -17,7 +17,8 @@
                     $name = $r['name'];
                     $id = $r['id'];
                     //echo "<a href='?page=cat&cat=$id'>
-                    echo "<a href='".$site_domain."/cat/$id/'>
+                    //echo "<a href='".$site_domain."/cat/$id/'>
+                    echo "<a href='".$site_domain."/?page=cat&cat=$id'>
                             <div style='margin: auto;'>$name</div>
                         </a>";
                 }
@@ -28,11 +29,13 @@
                 if (!isset($_SESSION['user'])) {
                 echo "
                 <div class='auth'>
-                    <img src='$site_domain/img/icon_lk.png'>
-                    <a class='auth-link' href='$site_domain/auth/'>Войти</a>
+                    <img src='$site_domain/img/icon_lk.png'>"
+                    //<a class='auth-link' href='$site_domain/auth/'>Войти</a>
+                    ."<a class='auth-link' href='$site_domain/?page=auth'>Войти</a>
                 </div>
-                <div class='reg'>
-                    <a href='$site_domain/registration/'>Регистрация</a>
+                <div class='reg'>"
+                    //<a href='$site_domain/registration/'>Регистрация</a>
+                    ."<a href='$site_domain/?page=registration'>Регистрация</a>
                 </div>";
                 }
                 else {
@@ -42,8 +45,9 @@
                    } else $status = $res_access['access_role'];
                     $email = $_SESSION['user']['email'];
                     echo "<div class='line-lk'>
-                        <img src='$site_domain/img/icon_lk.png'>
-                    <a  href='$site_domain/lk/'>$email
+                        <img src='$site_domain/img/icon_lk.png'>".
+                    //<a  href='$site_domain/lk/'>$email
+                    "<a  href='$site_domain/page=lk'>$email
                     </a>
                     <div class='lk-menu'>";
                     if ($status != 'none') {
@@ -51,11 +55,13 @@
                         <a href='$site_domain/admin/'>Админка</a>
                         </div>";
                     }
-                   echo "<div class='lk-menu-list'>
-                            <a href='$site_domain/lk/'>Личный кабинет</a>
+                   echo "<div class='lk-menu-list'>".
+                            //<a href='$site_domain/lk/'>Личный кабинет</a>
+                    "<a href='$site_domain/?page=lk'>Личный кабинет</a>
                             </div>
-                        <div class='lk-menu-list'>
-                        <a href='$site_domain/exit'>Выход</a>
+                        <div class='lk-menu-list'>".
+                        //<a href='$site_domain/exit'>Выход</a>
+                    "<a href='$site_domain/?exit=true'>Выход</a>
                         </div>
                     </div>
                     </div>";
@@ -75,7 +81,8 @@
                 $total_sum += $price * $numbers;
             }
             $total_sum = number_format($total_sum, 0, ",", " ");
-            echo '<a href="'.$site_domain.'/cart/"><div class="cart">
+            //echo '<a href="'.$site_domain.'/cart/"><div class="cart">
+            echo '<a href="'.$site_domain.'/?page=cart"><div class="cart">
            <div class="cart-text">
                 <div class="summma">
                    <span class="sum" id="cart_total_sum">'.$total_sum.'</span>

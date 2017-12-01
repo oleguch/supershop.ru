@@ -137,7 +137,10 @@
                 </div>
             </span>
         </div>
-        <?php echo '<div href="'.$site_domain.'/order4/" class="btn-confirm confirm-order" style="margin-left: 30px;">Подтвердить заказ</div>';?>
+        <?php
+            //echo '<div href="'.$site_domain.'/order4/" class="btn-confirm confirm-order" style="margin-left: 30px;">Подтвердить заказ</div>';
+            echo '<div href="'.$site_domain.'/?page=order4" class="btn-confirm confirm-order" style="margin-left: 30px;">Подтвердить заказ</div>';
+        ?>
         
         
     </div>

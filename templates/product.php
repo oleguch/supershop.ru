@@ -61,7 +61,10 @@ while ($rg = pg_fetch_array($result_goods)) {
     ?>
     </div>
     <div class="prod-images-mini">
-        <span style="float:left;cursor: pointer;"><img class="arrow-img-prod" id="prod_img_prev" aria-disabled="true" src="img/img-arrow-left-noactiv.png"></span>
+        <span style="float:left;cursor: pointer;">
+            <?php echo "<img class='arrow-img-prod' id='prod_img_prev' aria-disabled='true' src='$site_domain/img/img-arrow-left-noactiv.png'>";?>
+
+        </span>
         <span style="float:left; height: 120px; width: 400px;margin-left: 10px;margin-right: 10px;"><div id="mini_img">
            <?php
             for ($i=1; $i <=sizeof($img);$i++) {
@@ -75,7 +78,7 @@ while ($rg = pg_fetch_array($result_goods)) {
 
         </div>
         </span>
-        <span style="float:left;"><img class="arrow-img-prod" id="prod_img_next" aria-disabled="false" src="img/img-arrow-right-activ.png" alt=""></span>
+<?php echo "<span style='float:left;'><img class='arrow-img-prod' id='prod_img_next' aria-disabled='false' src='$site_domain/img/img-arrow-right-activ.png' alt=''></span>";?>
         
     </div>
 </span>
@@ -188,7 +191,8 @@ while ($rg = pg_fetch_array($result_goods)) {
                 $badge_path = "$site_domain/img/hot.png";
             if ($badge == 'none')
                 $badge_path = "";
-                echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'/"><span class="slide-item good-item-block-slide">
+                //echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'/"><span class="slide-item good-item-block-slide">
+            echo '<a href="'.$site_domain.'/?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="'.$goods[$a]['img'].'"><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[$a]['name'].'</div>

@@ -57,7 +57,10 @@ $itogo_sum = 0;
                 <div class="itogo">Итого:</div>
                 <div class="cart-itogo-sum" id="cart-zakaz-sum"><?php echo number_format($itogo_sum, 0, ',', ' ');?> руб.</div>
             </div>
-            <?php echo '<a href="'.$site_domain.'/order1" class="cart-zakaz">Оформить заказ</a>';?>
+            <?php
+                //echo '<a href="'.$site_domain.'/order1" class="cart-zakaz">Оформить заказ</a>';
+                echo '<a href="'.$site_domain.'/?page=order1" class="cart-zakaz">Оформить заказ</a>';
+            ?>
         </div>
         
     </div>

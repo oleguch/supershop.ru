@@ -44,7 +44,8 @@ while ($r_goods = pg_fetch_array($result_goods)) {
             if ($badge == 'none')
                 $badge_path = "";
 
-            echo '<a href="'.$site_domain.'/product/'.$goods[$i]['id'].'"><span class="slide-item good-item-block-slide">
+            //echo '<a href="'.$site_domain.'/product/'.$goods[$i]['id'].'"><span class="slide-item good-item-block-slide">
+            echo '<a href="'.$site_domain.'/?page=product&id='.$goods[$i]['id'].'"><span class="slide-item good-item-block-slide">
                 <div class="slide-item-img">
                     <img class="image-good-item-block" src="'.$goods[$i]['img'].'">
                     <img class="image-badge" src="'.$badge_path.'">
@@ -102,7 +103,8 @@ while ($r_goods = pg_fetch_array($result_goods)) {
             if ($badge == 'none')
                 $badge_path = "";
                 //echo '<a href="?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
-            echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
+            //echo '<a href="'.$site_domain.'/product/'.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
+            echo '<a href="'.$site_domain.'/?page=product&id='.$goods[$a]['id'].'"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="'.$goods[$a]['img'].'"><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[$a]['name'].'</div>

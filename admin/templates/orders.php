@@ -52,8 +52,9 @@ $total_pages = ceil(pg_fetch_row(pg_query($dbconn ,"SELECT COUNT(id) FROM osamyl
             echo "</select>
                     </span>
                     <span class='col3'>$total_order руб.</span>
-                    <span class='col4'>$datetime</span>
-                    <span class='col5'  id='seeorder$number'><a href='$site_domain/order$number/'>просмотр</a></span>
+                    <span class='col4'>$datetime</span>".
+                    //<span class='col5'  id='seeorder$number'><a href='$site_domain/order$number/'>просмотр</a></span>
+            "<span class='col5'  id='seeorder$number'><a href='$site_domain/admin/?page=order&id=$number'>просмотр</a></span>
                 </div>";
         }
         ?>

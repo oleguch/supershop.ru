@@ -62,7 +62,7 @@ function add_cart_from_ses_to_db($dbconn) {
         $id_var = $good['var'];
         $price = $good['price'];
         if ($id_var != '')
-            $query_good = "INSERT INTO osamylov_sold_goods (id_order, id_good, numbers, id_var, price) VALUES (".$id_cart.", ".$id_good.", ".$numbers.", ".$id_var.", ".$price.")";
+            $query_good = "INSERT INTO osamylov_sold_goods (id_order, id_good, numbers, id_variant, price) VALUES (".$id_cart.", ".$id_good.", ".$numbers.", ".$id_var.", ".$price.")";
         else
             $query_good = "INSERT INTO osamylov_sold_goods (id_order, id_good, numbers, price) VALUES (".$id_cart.", ".$id_good.", ".$numbers.", ".$price.")";
         pg_query($dbconn, $query_good);
@@ -82,40 +82,40 @@ function combination_cart_db_ses($dbconn, $id_cart) {
         //echo "Сравним товар из бд под id = ".$r['id_good']."\n";
         $count = 0;
         foreach ($_SESSION['cart_goods'] as $k => $v) {
-           // echo " c товаром из SESSION с id = ".$v['id_good'];
-            if ($r['id_good'] == $v['id_good']) {
-               // echo ". Совпадение!\n";
+          //  echo " c товаром из SESSION с id = ".$v['id_good'];
+            if (($r['id_good'] == $v['id_good']) && ($r['id_variant'] == $v['var'])) {
+              // echo ". Совпадение!\n";
                 $numbers = $v['number'] + $r['numbers'];
-                change_count_good_in_cart_db($dbconn, $r['id_good'], $numbers, $_SESSION['user']['id']);
+                change_count_good_in_cart_db($dbconn, $r['id_good'], $v['var'], $numbers, $_SESSION['user']['id']);
                 $_SESSION['cart_goods'][$k]['number'] = $numbers;
             } else {
-             //   echo ". Нет совпадения, идем дальше\n";
+            //    echo ". Нет совпадения, идем дальше\n";
                 $count ++;
                 //$_SESSION['cart_goods'][] = array('id_good' => $r['id_good'], 'number' => $r['numbers'], 'var' => $r['id_variant']);
             }
         }
-       // echo "Не совпали ".$count." товаров из сессии, где всего ".sizeof($_SESSION['cart_goods'])." товаров\n";
+        //echo "Не совпали ".$count." товаров из сессии, где всего ".sizeof($_SESSION['cart_goods'])." товаров\n";
         if ($count == sizeof($_SESSION['cart_goods'])) {
-       //     echo "Добавим товар с id = ".$r['id_good']." в сессию";
+            //echo "Добавим товар с id = ".$r['id_good']." в сессию";
             $_SESSION['cart_goods'][] = array('id_good' => $r['id_good'], 'number' => $r['numbers'], 'var' => $r['id_variant']);
         }
     }
     $max_size = pg_fetch_row(pg_query($dbconn, "select COUNT (*) from osamylov_sold_goods where id_order = ".$id_cart))[0];
     foreach ($_SESSION['cart_goods'] as $k => $v) {
-     //   echo "Сравним товар из сессии под id= ".$v['id_good']."\n";
+        //echo "Сравним товар из сессии под id= ".$v['id_good']."\n";
         $count = 0;
         $res_cart = pg_query($dbconn, $query);
         while ($r = pg_fetch_array($res_cart)) {
-            //  echo " с товаром из бд с id = ".$r['id_good']."\n";
-            if ($r['id_good'] != $v['id_good']) {
+              //echo " с товаром из бд с id = ".$r['id_good']."\n";
+            if (!(($r['id_good'] == $v['id_good']) && ($r['id_variant'] == $v['var']))) {
                 $count++;
             }
         }
-         //       echo "Совпадения нет\n";
+          //      echo "Совпадения нет\n";
 
-       // echo "Не совпали ".$count." товаров из базы, где всего ".$max_size." товаров\n";
+        //echo "Не совпали ".$count." товаров из базы, где всего ".$max_size." товаров\n";
         if ($count == $max_size) {
-        //    echo "Добавим товар с id = ".$v['id_good']." в бд";
+           //echo "Добавим товар с id = ".$v['id_good']." в бд";
             $id_good = $v['id_good'];
             $numbers = $v['number'];
             $id_var = $v['var'];
@@ -653,13 +653,15 @@ if (isset($_POST['change_role_id'])) {
 
 //============================================ДОБАВЛЕНИЕ ТОВАРА В КОРЗИНУ
 if (isset($_POST['add_good_to_cart'])){
+
     $id = $_POST['id_good'];
     $var = @$_POST['prod-var'];
     $price = $_POST['price'];
     $repeat = 0;
+    //echo " Добавляем товар $id в корзину";
     if (isset($_SESSION['cart_goods']))
         foreach ($_SESSION['cart_goods'] as $k => $val) {
-            if ($val['id_good'] == $id) {
+            if (($val['id_good'] == $id) && ($val['var'] == $var)) {
                 $_SESSION['cart_goods'][$k]['number']++;
                 $repeat = 1;
                 break;
@@ -678,7 +680,7 @@ if (isset($_POST['add_good_to_cart'])){
 function add_good_to_cart ($id_good, $id_var, $id_user, $dbconn) {
 
     $id_cart = get_id_cart($id_user, $dbconn);
-    $query = "SELECT * FROM osamylov_sold_goods WHERE id_order = ".$id_cart." AND id_good = ".$id_good;
+    $query = "SELECT * FROM osamylov_sold_goods WHERE id_order = ".$id_cart." AND id_good = ".$id_good." AND id_variant = ".$id_var;
     $r_good = pg_fetch_array(pg_query($dbconn, $query));
 
     if (!$r_good) {
@@ -691,20 +693,20 @@ function add_good_to_cart ($id_good, $id_var, $id_user, $dbconn) {
         pg_query($dbconn, $query_good);
     } else {
         foreach ($_SESSION['cart_goods'] as $k=> $v) {
-            if ($v['id_good'] == $id_good) {
+            if (($v['id_good'] == $id_good) && ($v['var'] == $id_var)) {
                 $number = $v['number'];
             }
         }
-        change_count_good_in_cart_db($dbconn, $id_good, $number, $_SESSION['user']['id']);
+        change_count_good_in_cart_db($dbconn, $id_good, $id_var, $number, $_SESSION['user']['id']);
     }
 }
 
-function change_count_good_in_cart_db ($dbconn, $id_good, $number, $id_user) {
+function change_count_good_in_cart_db ($dbconn, $id_good, $id_var, $number, $id_user) {
     $id_user = (int) $id_user;
     $id_order = get_id_cart($id_user, $dbconn);
     $number = (int) $number;
     $id_good = (int) $id_good;
-    $query = "UPDATE osamylov_sold_goods SET numbers = ".$number." WHERE id_order = ".$id_order." AND id_good = ".$id_good;
+    $query = "UPDATE osamylov_sold_goods SET numbers = ".$number." WHERE id_order = ".$id_order." AND id_good = ".$id_good." AND id_variant = ".$id_var;
     pg_query($dbconn, $query);
 }
 
@@ -808,7 +810,6 @@ if (isset($_POST['confirm_order'])) {
             $id_good = $goods['id_good'];
             $numbers = $goods['number'];
             $id_var = @$goods['var'];
-            //$price = pg_fetch_array(pg_query($dbconn, 'select price from goods where id = '.$id_good))['price'];
             $price = $goods['price'];
             $total_price += $price * $numbers;
             if ($id_var != '') {

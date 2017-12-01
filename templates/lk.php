@@ -85,13 +85,6 @@
                 $datetime = date("d.m.Y в H:i", strtotime($r_orders['time']));
                 $total_order = $r_orders['total_price'];
                 $status = $r_orders['status'];
-                /*$q_sold_good = "select goods.price, sold_goods.numbers from sold_goods inner join goods on sold_goods.id_good = goods.id WHERE sold_goods.id_order = " . $number;
-                $result_sold_good = pg_query($dbconn, $q_sold_good);
-                while ($r_sold_good = pg_fetch_array($result_sold_good)) {
-                    $numbers = $r_sold_good['numbers'];
-                    $price = $r_sold_good['price'];
-                    $total_order += $price * $numbers;
-                }*/
                 $total_order = number_format($total_order, 0, ',', ' ');
                 echo '<div class="lk-orders-item">
                             <span class="lk-order-info">

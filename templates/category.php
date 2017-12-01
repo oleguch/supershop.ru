@@ -43,9 +43,11 @@ while ($rg = pg_fetch_array($result_goods)) {
     <span class="cat-buts-page">';
                     for ($i=1;$i<=$total_pages;$i++) {
                         if ($page == $i) {
-                        echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
+                        //echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
+                        echo "<a class='cat-but-page page-activ' href='$site_domain/?page=cat&cat=$id&p=$i'>$i</a>";
                         } else {
-                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
+                            //echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
+                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/?page=cat&cat=$id&p=$i'>$i</a>";
                         }
                     }
                 echo '</span>';
@@ -69,7 +71,8 @@ while ($rg = pg_fetch_array($result_goods)) {
         $badge_path = "$site_domain/img/hot.png";
     if ($badge == 'none')
         $badge_path = "";
-        echo '<a href="'.$site_domain.'/product/'.$goods[1]['id'].'"><span class="slide-item good-item-block-slide">
+        //echo '<a href="'.$site_domain.'/product/'.$goods[1]['id'].'"><span class="slide-item good-item-block-slide">
+        echo '<a href="'.$site_domain.'/?page=product&id='.$goods[1]['id'].'"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img src="'.$goods[1]['img'].'"  class="image-good-item-block" ><img class="image-badge" src="'.$badge_path.'"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">'.$goods[1]['name'].'</div>
@@ -98,7 +101,8 @@ if ($goods[1]['price_wo_discount'] != '') {
                 if ($badge == 'none')
                     $badge_path = "";
 
-                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                //echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -129,7 +133,8 @@ if ($goods[1]['price_wo_discount'] != '') {
                     $badge_path = "$site_domain/img/hot.png";
                 if ($badge == 'none')
                     $badge_path = "";
-                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                //echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -165,7 +170,8 @@ if ($goods[1]['price_wo_discount'] != '') {
                     $badge_path = "$site_domain/img/hot.png";
                 if ($badge == 'none')
                     $badge_path = "";
-                echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                //echo '<a href="'.$site_domain.'/product/' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
+                echo '<a href="'.$site_domain.'/?page=product&id=' . $goods[$i]['id'] . '"><span class="slide-item good-item-block-slide">
             <div class="slide-item-img"><img class="image-good-item-block" src="' . $goods[$i]['img'] . '"><img class="image-badge" src="' . $badge_path . '"></div>
             <div class="slide-item-text">
             <div class="slide-item-name">' . $goods[$i]['name'] . '</div>
@@ -190,9 +196,11 @@ if ($goods[1]['price_wo_discount'] != '') {
     <span class="cat-buts-page">';
                     for ($i=1;$i<=$total_pages;$i++) {
                         if ($page == $i) {
-                        echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
+                        //echo "<a class='cat-but-page page-activ' href='$site_domain/cat/$id/$i'>$i</a>";
+                        echo "<a class='cat-but-page page-activ' href='$site_domain/?page=cat&id=$id&p=$i'>$i</a>";
                         } else {
-                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
+                            //echo "<a class='cat-but-page page-noactiv' href='$site_domain/cat/$id/$i'>$i</a>";
+                            echo "<a class='cat-but-page page-noactiv' href='$site_domain/?page=cat&id=$id&p=$i'>$i</a>";
                         }
                     }
                 echo '</span>';

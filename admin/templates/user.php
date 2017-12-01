@@ -75,7 +75,7 @@ while ($r_total = pg_fetch_array($res_total)) {
         $datetime = date("d.m.Y в H:i", strtotime($r_orders['time']));
         $total_order = $r_orders['total_price'];
         $total_order = number_format($total_order, 0, ',', ' ');
-        echo "<a href='$site_domain/order/$number' class='href-to-order-from-user'> <div class='user-line-order'>
+        echo "<a href='$site_domain/admin/?page=order&id=$number' class='href-to-order-from-user'> <div class='user-line-order'>
                 <span class='col1'>№ ".$number."</span>
                 <span class='col2'>".$total_order." руб.</span>
                 <span class='col3'>".$datetime."</span>
@@ -88,9 +88,11 @@ while ($r_total = pg_fetch_array($res_total)) {
         if ($total_pages > 1) {
             for ($i=1;$i<=$total_pages;$i++) {
                 if ($page == $i) {
-                    echo "<a class='btn-pages btn-page-activ' href='$site_domain/user/$id/$i'>$i</a>";
+                    //echo "<a class='btn-pages btn-page-activ' href='$site_domain/user/$id/$i'>$i</a>";
+                    echo "<a class='btn-pages btn-page-activ' href='$site_domain/admin/?page=user&id=$id&p=$i'>$i</a>";
                 } else {
-                    echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/user/$id/$i'>$i</a>";
+                    //echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/user/$id/$i'>$i</a>";
+                    echo "<a class='btn-pages btn-page-noactiv' href='$site_domain/admin/?page=user&id=$id&p=$i'>$i</a>";
                 }
             }
         }
@@ -116,6 +118,7 @@ while ($r_total = pg_fetch_array($res_total)) {
 <div class="admin-user-delete">
     <?php
 
-    echo "<a href='$site_domain/deluser$id/'>Удалить пользователя</a>";
+    //echo "<a href='$site_domain/deluser$id/'>Удалить пользователя</a>";
+    echo "<a href='$site_domain/work.php?page=delete_user=$id'>Удалить пользователя</a>";
     ?>
 </div>

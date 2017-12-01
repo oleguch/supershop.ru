@@ -1,6 +1,9 @@
 <?php
 #$site_domain = 'http://localhost/supershop.ru';
-$site_domain = 'http://supershop.ru';
+//$site_domain = 'http://supershop.ru';
+//$site_domain = 'http://test.14school.ru';
+$site_domain = 'http://shoggoth.ru/edu/09/osamylov/supershop.ru';
+//$site_domain = 'http://skill.box/diplom';
 ?>
 <!DOCTYPE html>
 <html>

@@ -1,0 +1,6 @@
+Options +FollowSymLinks -MultiViews
+RewriteEngine on
+#RewriteBase http://supershop.ru/admin/
+RewriteRule ^users/?$ index.php?page=users [L]
+RewriteRule ^users/([^/]+)/?$ index.php?page=users&p=$1& [L]
+RewriteRule ^cats/?$ index.php?page=cats [L]
